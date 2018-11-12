@@ -10,17 +10,28 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
 
+/**
+ * File Processor
+ * @author Gaëtan
+ */
 public class FileProcessor {
     private BufferedReader reader;
     private String dicoFile;
     private String language;
     
+    /**
+    * Constructor
+    * @param language Choosen Language
+    */
     public FileProcessor(String language){
         this.language = language;
         selectLanguageFile();
         makeDicoFileStr();
     }
     
+    /**
+    * Select a language file (dico) (maybe deprecated in futur)
+    */
     private void selectLanguageFile(){
         switch(language){
             case "FR" :
