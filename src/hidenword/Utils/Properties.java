@@ -7,7 +7,7 @@
 package hidenword.Utils;
 
 /**
- *
+ * Properties of config file
  * @author Gaëtan
  */
 public final class Properties {

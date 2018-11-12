@@ -12,13 +12,16 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- *
+ * Database Connection
  * @author Gaëtan
  */
 public class Database {
     private static Database instance = null;
     private static Connection connection = null;
 
+    /**
+    * Constructor
+    */
     private Database() {
         Connection conn = null;
         try{
@@ -32,14 +35,20 @@ public class Database {
         connection = conn;
     }
         
-    /** Creates the instance is synchronized to avoid multithreads problems */
+    /**
+    * createInstance : Creates the instance of database
+    * Creates the instance is synchronized to avoid multithreads problems
+    */
     private synchronized static void createInstance () {
         if (instance == null) { 
             instance = new Database ();
         }
     }
     
-    /** Get the properties instance. Uses singleton pattern */
+    /**
+    * Get the database instance. Uses singleton pattern
+    * @return Database.
+    */
     public static Database getInstance(){
         // Uses singleton pattern to guarantee the creation of only one instance
         if(instance == null) {
@@ -49,12 +58,17 @@ public class Database {
     }
 
     /** Override the clone method to ensure the "unique instance" requeriment of this class
-     * @throws java.lang.CloneNotSupportedException */
+     * @throws java.lang.CloneNotSupportedException 
+     */
     @Override
     public Object clone() throws CloneNotSupportedException {
         throw new CloneNotSupportedException();
     }
     
+    /**
+    * Get the Connection.
+    * @return Connection.
+    */
     public Connection getConnection() {
         return connection;
     }

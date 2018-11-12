@@ -16,14 +16,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Configuration Gestion
  * @author Gaëtan
  */
 public class Configuration {
     private Properties properties = null;
     private static Configuration instance = null;
     
-    /** Private constructor */
+    /**
+    * Private constructor
+    */
     private Configuration (){
         this.properties = new Properties();
         FileInputStream file = null;
@@ -40,14 +42,18 @@ public class Configuration {
         }
     } 
     
-    /** Creates the instance is synchronized to avoid multithreads problems */
+    /**
+    * Creates the instance is synchronized to avoid multithreads problems
+    */
     private synchronized static void createInstance () {
         if (instance == null) { 
             instance = new Configuration ();
         }
     }
     
-    /** Get the properties instance. Uses singleton pattern */
+    /**
+    * Get the Configuration instance. Uses singleton pattern
+    */
     public static Configuration getInstance(){
         // Uses singleton pattern to guarantee the creation of only one instance
         if(instance == null) {
@@ -56,13 +62,17 @@ public class Configuration {
         return instance;
     }
     
-    /** Get a property of the property file */
+    /**
+    * Get a property of the property file
+    * @param String key : property key.
+    * @return property.
+    */
     public String getProperty(String key){
         String result = null;
         
         StringWriter writer = new StringWriter();
-  this.properties.list(new PrintWriter(writer));
-   System.out.println(writer.getBuffer().toString());
+        this.properties.list(new PrintWriter(writer));
+        System.out.println(writer.getBuffer().toString());
         
         if(key !=null && !key.trim().isEmpty()){
             result = this.properties.getProperty(key);
@@ -70,13 +80,14 @@ public class Configuration {
         return result;
     }
     
-    /** Override the clone method to ensure the "unique instance" requeriment of this class */
+    /**
+    * Override the clone method to ensure the "unique instance" requeriment of this class
+    * @throws java.lang.CloneNotSupportedException 
+    */
     public Object clone() throws CloneNotSupportedException {
         throw new CloneNotSupportedException();
     }
 }
-
-
 
 
   
