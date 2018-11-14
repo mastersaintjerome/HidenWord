@@ -79,6 +79,10 @@ final public class Game {
         return maxTry;
     }
 
+    public Player[] getPlayers() {
+        return players;
+    }
+
     /**
      * Set a random word to found
      * @throws IOException
@@ -140,15 +144,17 @@ final public class Game {
     }
     
     /**
-     *
+     * A player turn
      * @param player
      */
     public void playerGameturn(Player player){
         char c = player.getCurrentChar();
+        //We don't count the try if player is right
         if(charInWord(c)){
             player.setCharFoundinSearchWord(findIndexes(c));
+        }else{
+            player.playerTry();
         }
-        player.playerTry();
         if(isGameOver(player)){
             player.setPlayerGameState(Player.PlayerGameState.LOST);
             gameState = GameState.END;

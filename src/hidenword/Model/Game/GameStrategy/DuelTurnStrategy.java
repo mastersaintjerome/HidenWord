@@ -16,6 +16,7 @@ final public class DuelTurnStrategy implements GameTurnStrategy{
 
     @Override
     public void nextTurn(Game game) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        game.playerGameturn(game.getPlayers()[0]);
+        game.playerGameturn(game.getPlayers()[1]);
     }
 }

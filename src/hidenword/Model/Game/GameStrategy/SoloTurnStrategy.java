@@ -16,6 +16,6 @@ final public class SoloTurnStrategy implements GameTurnStrategy{
 
     @Override
     public void nextTurn(Game game) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        game.playerGameturn(game.getPlayers()[0]);
     }
 }
