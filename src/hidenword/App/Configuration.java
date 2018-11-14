@@ -6,6 +6,7 @@
 
 package hidenword.App;
 
+import hidenword.App.Core.File.Paths;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;

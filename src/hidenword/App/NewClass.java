@@ -6,10 +6,11 @@
 
 package hidenword.App;
 
+import hidenword.App.Core.File.FileProcessor;
 import hidenword.App.Core.Configuration.Properties;
-import static hidenword.App.Paths.FILE_LOGIN_SCENE_LANGS_NAME;
-import static hidenword.App.Paths.PATH_CONFFILE;
-import static hidenword.App.Paths.PATH_LOGIN_SCENE_LANGS;
+import static hidenword.App.Core.File.Paths.FILE_LOGIN_SCENE_LANGS_NAME;
+import static hidenword.App.Core.File.Paths.PATH_CONFFILE;
+import static hidenword.App.Core.File.Paths.PATH_LOGIN_SCENE_LANGS;
 import static hidenword.App.Core.Configuration.Properties.DICOS_DIRECTORY;
 import static hidenword.App.Core.Configuration.Properties.DICO_FILENAME_EXTENSION;
 import java.io.File;

@@ -6,7 +6,7 @@
 
 package hidenword.App.Core.Configuration;
 
-import hidenword.App.Paths;
+import hidenword.App.Core.File.Paths;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;

@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package hidenword.App;
+package hidenword.App.Core.File;
 
+import hidenword.App.Configuration;
 import hidenword.App.Core.Configuration.Properties;
 
 /**

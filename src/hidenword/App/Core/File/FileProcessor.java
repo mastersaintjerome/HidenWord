@@ -1,4 +1,4 @@
-package hidenword.App;
+package hidenword.App.Core.File;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
