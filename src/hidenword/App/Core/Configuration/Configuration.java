@@ -10,7 +10,7 @@ package hidenword.App.Core.Configuration;
  *
  * @author Gaëtan
  */
-public class Configuration {
+final public class Configuration {
     final private Driver driver;
     
     public Configuration(Driver driver){
@@ -20,6 +20,7 @@ public class Configuration {
     /**
      * Check if the configuration has the key
      * @param key Configuration item to check
+     * @return boolean
      */
     public boolean has(String key){
         return driver.has(key);

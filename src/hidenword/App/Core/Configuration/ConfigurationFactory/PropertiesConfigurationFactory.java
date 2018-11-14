@@ -13,11 +13,10 @@ import hidenword.App.Core.Configuration.PropertiesDriver;
  * Configuration Factory for configuration with properties file
  * @author Gaëtan
  */
-public class propertiesConfigurationFactory implements ConfigurationFactory{
+final public class PropertiesConfigurationFactory implements ConfigurationFactory{
 
     @Override
     public Configuration create(String fileName) {
         return new Configuration(new PropertiesDriver(fileName));
-    }
-    
+    }  
 }

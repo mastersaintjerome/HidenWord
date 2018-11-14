@@ -6,7 +6,6 @@
 
 package hidenword.App.Core.Configuration;
 
-import hidenword.App.Core.File.Paths;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,7 +19,7 @@ import java.util.logging.Logger;
  * Properties Driver, implementation of driver file for configuration using
  * @author Gaëtan
  */
-public class PropertiesDriver implements Driver{
+final public class PropertiesDriver implements Driver{
     final private Properties properties;
     
     /**
