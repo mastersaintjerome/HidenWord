@@ -7,16 +7,17 @@
 package hidenword.Model.Game.GameFactory;
 
 import hidenword.Model.Game.Game;
+import hidenword.Model.Game.GameStrategy.SoloTurnStrategy;
 
 /**
- *
+ * Create the Solo Game Mode with the strategy 
  * @author Gaëtan
  */
 public class SoloGameFactory implements GameFactory{
 
     @Override
     public Game create() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new Game(new SoloTurnStrategy());
     }
     
 }

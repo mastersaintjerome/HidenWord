@@ -9,14 +9,13 @@ package hidenword.Model.Game.GameStrategy;
 import hidenword.Model.Game.Game;
 
 /**
- *
+ * Strategy for the duel game mode turn
  * @author Gaëtan
  */
-public class DuelTurnStrategy implements GameTurnStrategy{
+final public class DuelTurnStrategy implements GameTurnStrategy{
 
     @Override
     public void nextTurn(Game game) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 }
