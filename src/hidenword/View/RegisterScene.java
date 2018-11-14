@@ -6,8 +6,8 @@
 
 package hidenword.View;
 
-import static hidenword.Constants.Paths.FILE_REGISTER_SCENE_LANGS_NAME;
-import static hidenword.Constants.Paths.PATH_REGISTER_SCENE_LANGS;
+import static hidenword.App.Paths.FILE_REGISTER_SCENE_LANGS_NAME;
+import static hidenword.App.Paths.PATH_REGISTER_SCENE_LANGS;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;

@@ -1,9 +1,7 @@
-package hidenword.Utils;
+package hidenword.App;
 
-import static hidenword.Constants.Languages.LANGUAGE_EN;
-import static hidenword.Constants.Languages.LANGUAGE_FR;
-import static hidenword.Constants.Paths.DICOS_DIRECTORY;
-import static hidenword.Constants.Paths.DICO_FILENAME_EXTENSION;
+import static hidenword.App.Paths.DICOS_DIRECTORY;
+import static hidenword.App.Paths.DICO_FILENAME_EXTENSION;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -25,25 +23,7 @@ public class FileProcessor {
     */
     public FileProcessor(String language){
         this.language = language;
-        selectLanguageFile();
         makeDicoFileStr();
-    }
-    
-    /**
-    * Select a language file (dico) (maybe deprecated in futur)
-    */
-    private void selectLanguageFile(){
-        switch(language){
-            case "FR" :
-                language = LANGUAGE_FR;
-                break;
-            case "EN" :
-                language = LANGUAGE_EN;
-                break; 
-            default :
-                language = LANGUAGE_FR;
-                break;
-        }
     }
     
     private void makeDicoFileStr(){

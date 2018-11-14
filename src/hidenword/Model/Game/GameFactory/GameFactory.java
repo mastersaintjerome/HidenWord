@@ -4,15 +4,14 @@
  * and open the template in the editor.
  */
 
-package hidenword.App;
+package hidenword.Model.Game.GameFactory;
+
+import hidenword.Model.Game.Game;
 
 /**
- *
+ * GameFactory is an Interface to create the correct Game Mode
  * @author Gaëtan
  */
-public enum GameState {
-    RUN,
-    WIN,
-    LOST,
-    PAUSE
+public interface GameFactory {
+    public abstract Game create();
 }

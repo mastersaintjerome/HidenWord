@@ -4,16 +4,16 @@
  * and open the template in the editor.
  */
 
-package hidenword.Constants;
+package hidenword.Model.database;
 
 /**
- *
+ * Database Constants
  * @author Gaëtan
  */
-public final class Database {
+public final class DatabaseConstants {
     public final static String CONNECT_URL = "jdbc:sqlite:Data/db/hiden-word.db";
     
-    private Database(){
+    private DatabaseConstants(){
         //this prevents even the native class from 
         //calling this constructor as well :
         throw new AssertionError();

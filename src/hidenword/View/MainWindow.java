@@ -1,8 +1,8 @@
 package hidenword.View;
 
-import static hidenword.Constants.Windows.APP_NAME;
-import static hidenword.Constants.Windows.LOGIN_SCENE_HEIGHT;
-import static hidenword.Constants.Windows.LOGIN_SCENE_WIDTH;
+import static hidenword.View.Windows.APP_NAME;
+import static hidenword.View.Windows.LOGIN_SCENE_HEIGHT;
+import static hidenword.View.Windows.LOGIN_SCENE_WIDTH;
 import javafx.application.Application;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;

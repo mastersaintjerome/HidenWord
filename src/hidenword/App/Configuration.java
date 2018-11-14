@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package hidenword.Utils;
+package hidenword.App;
 
-import static hidenword.Constants.Paths.PATH_CONFFILE;
+import static hidenword.App.Paths.PATH_CONFFILE;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;

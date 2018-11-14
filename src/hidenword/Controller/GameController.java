@@ -6,8 +6,8 @@
 
 package hidenword.Controller;
 
-import static hidenword.Constants.Windows.GAME_SCENE_HEIGHT;
-import static hidenword.Constants.Windows.GAME_SCENE_WIDTH;
+import static hidenword.View.Windows.GAME_SCENE_HEIGHT;
+import static hidenword.View.Windows.GAME_SCENE_WIDTH;
 import hidenword.View.GameScene;
 import javafx.event.Event;
 import javafx.event.EventHandler;

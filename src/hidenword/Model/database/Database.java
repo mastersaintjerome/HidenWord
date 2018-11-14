@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 
-package hidenword.Utils;
+package hidenword.Model.database;
 
-import static hidenword.Constants.Database.CONNECT_URL;
+import static hidenword.Model.database.DatabaseConstants.CONNECT_URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * Database Connection
+ * DatabaseConstants Connection
  * @author Gaëtan
  */
 public class Database {
@@ -47,7 +47,7 @@ public class Database {
     
     /**
     * Get the database instance. Uses singleton pattern
-    * @return Database.
+    * @return DatabaseConstants.
     */
     public static Database getInstance(){
         // Uses singleton pattern to guarantee the creation of only one instance

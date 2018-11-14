@@ -4,10 +4,7 @@
  * and open the template in the editor.
  */
 
-package hidenword.Constants;
-
-import hidenword.Utils.Configuration;
-import hidenword.Utils.Properties;
+package hidenword.App;
 
 /**
  *
