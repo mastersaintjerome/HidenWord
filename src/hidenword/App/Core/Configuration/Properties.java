@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package hidenword.App;
+package hidenword.App.Core.Configuration;
 
 /**
  * Properties of config file

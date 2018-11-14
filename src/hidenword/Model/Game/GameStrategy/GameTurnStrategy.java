@@ -13,5 +13,5 @@ import hidenword.Model.Game.Game;
  * @author Gaëtan
  */
 public interface GameTurnStrategy {
-    public abstract void nextTurn(Game game);
+    public void nextTurn(Game game);
 }

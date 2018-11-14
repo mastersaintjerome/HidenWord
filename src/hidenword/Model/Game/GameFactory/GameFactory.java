@@ -13,5 +13,5 @@ import hidenword.Model.Game.Game;
  * @author Gaëtan
  */
 public interface GameFactory {
-    public abstract Game create();
+    public Game create();
 }

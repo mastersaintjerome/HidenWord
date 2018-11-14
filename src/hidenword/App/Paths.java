@@ -6,6 +6,8 @@
 
 package hidenword.App;
 
+import hidenword.App.Core.Configuration.Properties;
+
 /**
  *
  * @author Gaëtan
