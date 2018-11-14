@@ -30,7 +30,7 @@ public class Configuration {
         this.properties = new Properties();
         FileInputStream file = null;
         try {
-            file = new FileInputStream(PATH_CONFFILE);
+            file = new FileInputStream(Paths.PATH_CONFFILE);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Configuration.class.getName()).log(Level.SEVERE, null, ex);
         }

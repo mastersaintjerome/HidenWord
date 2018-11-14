@@ -1,7 +1,5 @@
 package hidenword.App;
 
-import static hidenword.App.Paths.DICOS_DIRECTORY;
-import static hidenword.App.Paths.DICO_FILENAME_EXTENSION;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -27,7 +25,7 @@ public class FileProcessor {
     }
     
     private void makeDicoFileStr(){
-        dicoFile = DICOS_DIRECTORY + language + "_dico" + DICO_FILENAME_EXTENSION;
+        dicoFile = Paths.DICOS_DIRECTORY + language + "_dico" + Paths.DICO_FILENAME_EXTENSION;
     }
     
     public int getNbLine() throws IOException{
@@ -45,15 +43,6 @@ public class FileProcessor {
             int lnum = 0;
             while ( ((line = lnr.readLine()) != null ) && ( (lnum = lnr.getLineNumber()) < index) ) {
             }           
-            //Start Debug 
-            if(lnum == 0){
-                System.out.println("the file has zero length");
-            }else if(lnum == index){
-                System.out.println("line " + index + ": " + line);
-            }else{
-                System.out.println("the file has only " + lnum + " line(s)");
-            }
-            //End Debug
         }
         return line;
     }

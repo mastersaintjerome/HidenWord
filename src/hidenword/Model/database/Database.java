@@ -6,7 +6,6 @@
 
 package hidenword.Model.database;
 
-import static hidenword.Model.database.DatabaseConstants.CONNECT_URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -25,7 +24,7 @@ public class Database {
     private Database() {
         Connection conn = null;
         try{
-            conn = DriverManager.getConnection(CONNECT_URL, "jdbc", "");
+            conn = DriverManager.getConnection(DatabaseConstants.CONNECT_URL, "jdbc", "");
             conn.setAutoCommit(false);
         }catch(SQLException ex){
             ex.printStackTrace();

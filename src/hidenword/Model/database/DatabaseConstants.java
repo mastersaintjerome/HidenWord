@@ -11,6 +11,10 @@ package hidenword.Model.database;
  * @author Gaëtan
  */
 public final class DatabaseConstants {
+
+    /**
+     * URL for the database
+     */
     public final static String CONNECT_URL = "jdbc:sqlite:Data/db/hiden-word.db";
     
     private DatabaseConstants(){
