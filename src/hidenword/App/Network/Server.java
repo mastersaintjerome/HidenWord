@@ -1,3 +1,5 @@
+package hidenword.App.Network;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.concurrent.ExecutorService;
@@ -5,10 +7,9 @@ import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import Session.Session;
-import Session.SessionService;
+import hidenword.App.Network.Session.SessionService;
 
-public final class Server implements Runnable{
+public final class Server implements Runnable {
     private ServerSocket ss;
     final private int port;
     final private SessionService sessionService;
@@ -20,18 +21,19 @@ public final class Server implements Runnable{
         this.sessionService = sessionService;
     }
     
+    @Override
     public void run() {
         while (running){
-    		try {
-				executor.submit(sessionService.create(ss.accept()));
-			} catch (IOException ex) {
-				Logger.getLogger(Server.class.getName()).severe(ex.getMessage());
-			}
+            try {
+                executor.submit(sessionService.create(ss.accept()));
+            } catch (IOException ex) {
+                Logger.getLogger(Server.class.getName()).severe(ex.getMessage());
+            }
         }
     }
     
     public void start() throws IOException {
-    	Logger.getLogger(Server.class.getName()).info("Starting server at port : " + port);
+    	Logger.getLogger(Server.class.getName()).log(Level.INFO, "Starting server at port : {0}", port);
     	ss = new ServerSocket(port);
     	executor.submit(this);
     }
@@ -43,8 +45,8 @@ public final class Server implements Runnable{
             ss.close();
             ss = null;
         } catch (IOException ex) {
-        	Logger.getLogger(Server.class.getName()).severe(ex.getMessage());
-        	Logger.getLogger(Server.class.getName()).info("Server failed to stop and Crashed !");
+            Logger.getLogger(Server.class.getName()).severe(ex.getMessage());
+            Logger.getLogger(Server.class.getName()).info("Server failed to stop and Crashed !");
         }
     }
 }

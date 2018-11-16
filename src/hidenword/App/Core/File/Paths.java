@@ -6,11 +6,8 @@
 
 package hidenword.App.Core.File;
 
-import hidenword.App.Configuration;
-import hidenword.App.Core.Configuration.Properties;
-
 /**
- *
+ * Files Paths Constants
  * @author Gaëtan
  */
 public final class Paths {
@@ -22,8 +19,6 @@ public final class Paths {
     public static final String PATH_REGISTER_SCENE_LANGS = System.getProperty("user.dir") + "/Resources/Langs/MessagesBundleRegisterScene/";
     public static final String FILE_REGISTER_SCENE_LANGS_NAME = "MessagesBundleRegisterScene";
     //Fin Internationnalisation
-    public static final String DICOS_DIRECTORY = Configuration.getInstance().getProperty(Properties.DICOS_DIRECTORY);
-    public static final String DICO_FILENAME_EXTENSION = Configuration.getInstance().getProperty(Properties.DICO_FILENAME_EXTENSION);
     
     private Paths(){
         //this prevents even the native class from 
