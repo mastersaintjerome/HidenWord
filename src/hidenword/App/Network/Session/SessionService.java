@@ -49,7 +49,7 @@ final public class SessionService {
      * Return all Session
      * @return all Session
      */
-    public Collection<Session> getAllSession() {
+    public Collection<Session> getAllSessions() {
         return sessions;
     }
 	

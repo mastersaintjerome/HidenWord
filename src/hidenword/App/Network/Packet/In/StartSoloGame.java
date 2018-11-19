@@ -4,32 +4,25 @@
  * and open the template in the editor.
  */
 
-package hidenword.App.Network.Room;
+package hidenword.App.Network.Packet.In;
 
-import hidenword.App.Game.Player;
+import hidenword.App.Network.Packet.PacketRegistryHandler;
 import hidenword.App.Network.Session.Session;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
- * Room of a duel game
+ * Packet when a Player want to start a solo game
  * @author Gaëtan
  */
-final public class DuelRoom implements Room{
-    
+final public class StartSoloGame implements PacketRegistryHandler.PacketHandler {
+
     @Override
-    public void create(Session session) {
+    public void handle(Session session, String packet) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
-    public void remove(Session session) {
+    public String code() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void join(Session session) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+    }   
 }

@@ -13,7 +13,7 @@ import hidenword.App.Network.Session.Session;
  * @author Gaëtan
  */
 final public class SoloRoom implements Room{
-
+    
     @Override
     public void create(Session session) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

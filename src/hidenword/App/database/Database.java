@@ -15,6 +15,7 @@ import java.sql.SQLException;
  * @author Gaëtan
  */
 public class Database {
+    public final static String CONNECT_URL = "jdbc:sqlite:Data/db/hiden-word.db";
     private static Database instance = null;
     private static Connection connection = null;
 
@@ -24,7 +25,7 @@ public class Database {
     private Database() {
         Connection conn = null;
         try{
-            conn = DriverManager.getConnection(DatabaseConstants.CONNECT_URL, "jdbc", "");
+            conn = DriverManager.getConnection(CONNECT_URL, "jdbc", "");
             conn.setAutoCommit(false);
         }catch(SQLException ex){
             ex.printStackTrace();
