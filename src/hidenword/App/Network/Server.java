@@ -9,6 +9,10 @@ import java.util.logging.Logger;
 
 import hidenword.App.Network.Session.SessionService;
 
+/**
+ * Server class
+ * @author Gaëtan
+ */
 public final class Server implements Runnable {
     private ServerSocket ss;
     final private int port;
@@ -16,6 +20,11 @@ public final class Server implements Runnable {
     volatile private boolean running = true;
     final private ExecutorService executor = Executors.newCachedThreadPool();
     
+    /**
+     * Create a new Server
+     * @param port
+     * @param sessionService
+     */
     public Server(int port,SessionService sessionService) {
     	this.port = port;
         this.sessionService = sessionService;
@@ -32,12 +41,19 @@ public final class Server implements Runnable {
         }
     }
     
+    /**
+     * Start the server
+     * @throws IOException
+     */
     public void start() throws IOException {
     	Logger.getLogger(Server.class.getName()).log(Level.INFO, "Starting server at port : {0}", port);
     	ss = new ServerSocket(port);
     	executor.submit(this);
     }
     
+    /**
+     * Close the server
+     */
     public void close() {
         try {
             running = false;

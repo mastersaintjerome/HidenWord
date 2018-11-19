@@ -7,19 +7,19 @@ package hidenword.App.Network.Session;
 public interface SessionHandler {
     
     /**
-     *
+     * Session started
      * @param session
      */
     public void started(Session session);
 
     /**
-     *
+     * Session Stopped
      * @param session
      */
     public void stopped(Session session);
 
     /**
-     *
+     * Session received packet
      * @param session
      * @param packet
      */

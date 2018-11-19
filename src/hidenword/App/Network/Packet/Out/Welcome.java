@@ -9,7 +9,7 @@ package hidenword.App.Network.Packet.Out;
 import hidenword.App.Network.Session.Session;
 
 /**
- *
+ * Welcome Packet
  * @author Gaëtan
  */
 /**
@@ -19,6 +19,10 @@ import hidenword.App.Network.Session.Session;
 final public class Welcome {
     final private Session session;
 
+    /**
+     * Create a Welcome Packet
+     * @param session
+     */
     public Welcome(Session session) {
         this.session = session;
     }

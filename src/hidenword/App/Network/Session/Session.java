@@ -9,7 +9,15 @@ import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Session class
+ * @author Gaëtan
+ */
 final public class Session implements Runnable{
+
+    /**
+     * End packet char
+     */
     public final static char END_OF_PACKET = '\n';
     private final Socket clientSocket;
     private final SessionService sessionService;
@@ -17,6 +25,12 @@ final public class Session implements Runnable{
     private PrintWriter writer;
     private boolean running = false;
 
+    /**
+     * Create a new Session
+     * @param client
+     * @param sessionService
+     * @param handler
+     */
     public Session(Socket client,SessionService sessionService,SessionHandler handler) {
         this.clientSocket = client;
         this.sessionService = sessionService;
@@ -66,6 +80,9 @@ final public class Session implements Runnable{
         return (this.clientSocket.isClosed() || !running);
     }
 
+    /**
+     * Stop a session
+     */
     public void stop() {
         running = false;
         sessionService.remove(this);

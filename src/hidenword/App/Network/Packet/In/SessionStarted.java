@@ -11,7 +11,7 @@ import hidenword.App.Network.Packet.PacketRegistryHandler;
 import hidenword.App.Network.Session.Session;
 
 /**
- *
+ * SessionStarted Packet
  * @author Gaëtan
  */
 final public class SessionStarted implements PacketRegistryHandler.PacketHandler{
