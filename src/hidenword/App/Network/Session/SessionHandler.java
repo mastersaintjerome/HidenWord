@@ -1,9 +1,27 @@
 package hidenword.App.Network.Session;
 
+/**
+ * Base Interface of Session Handler
+ * @author Gaëtan
+ */
 public interface SessionHandler {
-    public void start(Session session);
+    
+    /**
+     *
+     * @param session
+     */
+    public void started(Session session);
 
-    public void stop(Session session);
+    /**
+     *
+     * @param session
+     */
+    public void stopped(Session session);
 
-    public void receive(Session session, String packet);
+    /**
+     *
+     * @param session
+     * @param packet
+     */
+    public void received(Session session, String packet);
 }
