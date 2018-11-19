@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package hidenword.Model.database;
+package hidenword.App.database;
 
 /**
  * Database Constants

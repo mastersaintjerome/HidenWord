@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package hidenword.Model.database;
+package hidenword.App.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

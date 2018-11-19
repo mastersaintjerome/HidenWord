@@ -4,19 +4,18 @@
  * and open the template in the editor.
  */
 
-package hidenword.Model.Game.GameStrategy;
+package hidenword.App.Game.GameStrategy;
 
-import hidenword.Model.Game.Game;
+import hidenword.App.Game.Game;
 
 /**
- * Strategy for the duel game mode turn
+ * Strategy for the solo game mode turn
  * @author Gaëtan
  */
-final public class DuelTurnStrategy implements GameTurnStrategy{
+final public class SoloTurnStrategy implements GameTurnStrategy{
 
     @Override
     public void nextTurn(Game game) {
         game.playerGameturn(game.getPlayers()[0]);
-        game.playerGameturn(game.getPlayers()[1]);
     }
 }

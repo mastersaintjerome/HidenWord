@@ -1,4 +1,4 @@
-package hidenword.Model;
+package hidenword.App.Game;
 
 import java.util.ArrayList;
 

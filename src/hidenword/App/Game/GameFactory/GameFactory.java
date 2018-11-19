@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 
-package hidenword.Controller;
+package hidenword.App.Game.GameFactory;
+
+import hidenword.App.Game.Game;
 
 /**
- *
+ * GameFactory is an Interface to create the correct Game Mode
  * @author Gaëtan
  */
-public class PlayerController {
-    
+public interface GameFactory {
+    public Game create();
 }

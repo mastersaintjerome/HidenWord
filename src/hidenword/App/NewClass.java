@@ -47,7 +47,7 @@ public class NewClass {
             String test = fileProcessor.getLineAtIndex(randNumber);
             System.out.println(test);
             
-           
+           /*
             ResourceBundle messages;
 
             File file = new File(PATH_LOGIN_SCENE_LANGS);
@@ -58,6 +58,6 @@ public class NewClass {
             System.out.println(messages.getString("greetings"));
             System.out.println(messages.getString("inquiry"));
             System.out.println(messages.getString("farewell"));
-           
+           */
     }
 }

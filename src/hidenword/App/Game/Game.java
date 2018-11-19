@@ -1,9 +1,8 @@
 
-package hidenword.Model.Game;
+package hidenword.App.Game;
 
 import hidenword.App.Core.File.FileProcessor;
-import hidenword.Model.Game.GameStrategy.GameTurnStrategy;
-import hidenword.Model.Player;
+import hidenword.App.Game.GameStrategy.GameTurnStrategy;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;

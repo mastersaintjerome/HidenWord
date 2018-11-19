@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package hidenword.Model.Game.GameFactory;
+package hidenword.App.Game.GameFactory;
 
-import hidenword.Model.Game.Game;
-import hidenword.Model.Game.GameStrategy.DuelTurnStrategy;
+import hidenword.App.Game.Game;
+import hidenword.App.Game.GameStrategy.DuelTurnStrategy;
 
 /**
  * Create the Duel Game Mode with the strategy 

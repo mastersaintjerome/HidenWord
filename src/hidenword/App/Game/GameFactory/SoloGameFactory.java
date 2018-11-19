@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package hidenword.Model.Game.GameFactory;
+package hidenword.App.Game.GameFactory;
 
-import hidenword.Model.Game.Game;
-import hidenword.Model.Game.GameStrategy.SoloTurnStrategy;
+import hidenword.App.Game.Game;
+import hidenword.App.Game.GameStrategy.SoloTurnStrategy;
 
 /**
  * Create the Solo Game Mode with the strategy 
