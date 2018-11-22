@@ -20,14 +20,15 @@ final public class SoloRoom implements Room{
     Session session;
     Player player;
     private Game game;
+    private final int MAXTRY = 10;
     
     @Override
     public void create(Session session) {
         this.session = session;
         GameFactory gameFactory = new SoloGameFactory();
         game = gameFactory.create();
+        game.start(new Player[]{player}, MAXTRY);
     }
-
     @Override
     public void remove(Session session) {
         this.session = null;

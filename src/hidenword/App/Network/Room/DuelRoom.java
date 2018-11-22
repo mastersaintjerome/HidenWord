@@ -21,6 +21,7 @@ import java.util.Map;
 final public class DuelRoom implements Room{
     private Map<Session,Player> players = new HashMap();
     private Game game;
+    private final int MAXTRY = 10;
     
     @Override
     public void create(Session session) {

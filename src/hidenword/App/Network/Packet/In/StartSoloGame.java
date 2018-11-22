@@ -30,7 +30,9 @@ final public class StartSoloGame implements PacketRegistryHandler.PacketHandler 
         Room newSoloRoom = new SoloRoom();
         service.getRooms().add(newSoloRoom);
         session.setRoomId(service.getRooms().indexOf(newSoloRoom));
-        service.getRooms().get(session.getRoomId()).create(session);
+        Room room = service.getRooms().get(session.getRoomId());
+        room.create(session);
+        
         session.write(startSoloGameAccept);
     }
 
