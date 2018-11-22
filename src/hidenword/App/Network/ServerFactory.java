@@ -12,6 +12,7 @@ import hidenword.App.Network.Packet.In.SessionClosed;
 import hidenword.App.Network.Packet.In.SessionStarted;
 import hidenword.App.Network.Packet.In.StartDuelGame;
 import hidenword.App.Network.Packet.In.StartSoloGame;
+import hidenword.App.Network.Packet.In.Stop;
 import hidenword.App.Network.Packet.PacketRegistryHandler;
 import hidenword.App.Network.Session.SessionService;
 
@@ -38,6 +39,7 @@ final public class ServerFactory {
             PacketRegistryHandler packets = new PacketRegistryHandler(new PacketRegistryHandler.PacketHandler[]{
                 // @todo Set the input packets here
                 new Echo(),
+                new Stop(),
                 new SessionStarted()
             });
 
