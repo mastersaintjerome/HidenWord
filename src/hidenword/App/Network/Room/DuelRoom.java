@@ -6,6 +6,9 @@
 
 package hidenword.App.Network.Room;
 
+import hidenword.App.Game.Game;
+import hidenword.App.Game.GameFactory.DuelGameFactory;
+import hidenword.App.Game.GameFactory.GameFactory;
 import hidenword.App.Game.Player;
 import hidenword.App.Network.Session.Session;
 import java.util.HashMap;
@@ -16,20 +19,27 @@ import java.util.Map;
  * @author Gaëtan
  */
 final public class DuelRoom implements Room{
+    private Map<Session,Player> players = new HashMap();
+    private Game game;
     
     @Override
     public void create(Session session) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        players.put(session, new Player("NotSet"));
+        GameFactory gameFactory = new DuelGameFactory();
+        game = gameFactory.create();
     }
 
     @Override
     public void remove(Session session) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        players.remove(session);
     }
 
     @Override
-    public void join(Session session) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean join(Session session) {
+        if(players.size() < 2){
+            players.put(session, new Player("NotSet"));
+            return true;
+        }
+        return false;
     }
-    
 }

@@ -29,6 +29,7 @@ public interface Room {
     /**
      * joina a room
      * @param session
+     * @return tru if it works false if not
      */
-    public void join(Session session);
+    public boolean join(Session session);
 }

@@ -9,20 +9,19 @@ package hidenword.App.Network.Packet.Out;
 import hidenword.App.Network.Session.Session;
 
 /**
- * Answer of Packet when a Player want to start a solo game
- * Response for {@link StartSoloGame}
+ * Answer of Packet when a Player want to start a duel game
+ * Response for {@link StartDuelGame}
  * @author Gaëtan
  */
-final public class StartSoloGameAccept {
-    final private Session session;
-    
+final public class StartDuelGameAccept {
+    final private Session session;  
 
-    public StartSoloGameAccept(Session session) {
+    public StartDuelGameAccept(Session session) {
         this.session = session;
     }
 
     @Override
     public String toString() {
-        return "SOLOA" + session;
+        return "DUELA" + session;
     }
 }

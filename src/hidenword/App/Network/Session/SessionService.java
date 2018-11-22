@@ -1,5 +1,6 @@
 package hidenword.App.Network.Session;
 
+import hidenword.App.Network.Room.Room;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -14,7 +15,8 @@ import java.util.logging.Logger;
 final public class SessionService {
     private SessionHandler handler;
     final private Set<Session> sessions = new HashSet();
-
+    final private ArrayList<Room> rooms = new ArrayList();
+    
     /**
      * Create a SessionService
      * @param handler
@@ -23,6 +25,7 @@ final public class SessionService {
         this.handler = handler;
     }
 
+    
     /**
      * Create a Session with a clientSocket
      * @param clientSocket
@@ -61,4 +64,8 @@ final public class SessionService {
         this.sessions.remove(session);
         Logger.getLogger(SessionService.class.getName()).info("Session destroyed !");
     }	
+
+    public ArrayList<Room> getRooms() {
+        return rooms;
+    }
 }

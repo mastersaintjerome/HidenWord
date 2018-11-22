@@ -64,6 +64,10 @@ final public class Player {
         return pseudo;
     }
 
+    public void setPseudo(String pseudo) {
+        this.pseudo = pseudo;
+    }
+    
     /**
      *
      * @return the score

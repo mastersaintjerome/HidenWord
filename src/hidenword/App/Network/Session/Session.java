@@ -24,6 +24,7 @@ final public class Session implements Runnable{
     private final SessionHandler handler;
     private PrintWriter writer;
     private boolean running = false;
+    private int roomId;
 
     /**
      * Create a new Session
@@ -112,5 +113,13 @@ final public class Session implements Runnable{
         writer.write(packet.toString());
         writer.write(END_OF_PACKET);
         writer.flush();
-}
+    }
+
+    public int getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(int roomId) {
+        this.roomId = roomId;
+    }
 }

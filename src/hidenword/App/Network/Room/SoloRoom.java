@@ -6,6 +6,10 @@
 
 package hidenword.App.Network.Room;
 
+import hidenword.App.Game.Game;
+import hidenword.App.Game.GameFactory.GameFactory;
+import hidenword.App.Game.GameFactory.SoloGameFactory;
+import hidenword.App.Game.Player;
 import hidenword.App.Network.Session.Session;
 
 /**
@@ -13,20 +17,25 @@ import hidenword.App.Network.Session.Session;
  * @author Gaëtan
  */
 final public class SoloRoom implements Room{
+    Session session;
+    Player player;
+    private Game game;
     
     @Override
     public void create(Session session) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.session = session;
+        GameFactory gameFactory = new SoloGameFactory();
+        game = gameFactory.create();
     }
 
     @Override
     public void remove(Session session) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.session = null;
     }
 
     @Override
-    public void join(Session session) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean join(Session session) {
+        this.session = session;
+        return true;
     }
-    
 }

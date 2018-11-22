@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Game Classe, all the game logic
@@ -34,11 +36,16 @@ final public class Game {
      * @param word
      * @param maxTry
      */
-    public void start(Player[] players,String word,int maxTry){
-        this.players = players;
-        this.word = word;
-        this.maxTry = maxTry;
-        gameState = GameState.RUN;
+    public void start(Player[] players,int maxTry){
+        try {
+            this.players = players;
+            this.word = word;
+            this.maxTry = maxTry;
+            gameState = GameState.RUN;
+            randomWord();
+        } catch (IOException ex) {
+            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     /**
@@ -86,7 +93,7 @@ final public class Game {
      * Set a random word to found
      * @throws IOException
      */
-    public void randomWord() throws IOException{
+    private void randomWord() throws IOException{
         Locale currentLocale = Locale.getDefault();
         String localeLanguage = currentLocale.getLanguage();
         FileProcessor fileProcessor = new FileProcessor(localeLanguage.toUpperCase());

@@ -54,7 +54,7 @@ public final class Server implements Runnable {
     /**
      * Close the server
      */
-    public void close() {
+    public void stop() {
         try {
             running = false;
             sessionService.stopAll();
