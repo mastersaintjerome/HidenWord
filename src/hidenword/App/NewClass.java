@@ -14,6 +14,10 @@ import hidenword.App.Core.File.FileProcessor;
 import hidenword.App.Core.File.Paths;
 import static hidenword.App.Core.File.Paths.FILE_LOGIN_SCENE_LANGS_NAME;
 import static hidenword.App.Core.File.Paths.PATH_LOGIN_SCENE_LANGS;
+import hidenword.App.Game.Game;
+import hidenword.App.Game.GameFactory.GameFactory;
+import hidenword.App.Game.GameFactory.SoloGameFactory;
+import hidenword.App.Game.Player;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -46,7 +50,13 @@ public class NewClass {
             int randNumber = rand.nextInt(max - 0 + 1) + 0;
             String test = fileProcessor.getLineAtIndex(randNumber);
             System.out.println(test);
-            
+            /*
+                Player player = new Player("Bob");
+     Game game;
+                    GameFactory gameFactory = new SoloGameFactory();
+        game = gameFactory.create();
+        game.start(new Player[]{player}, 10);
+            */
            /*
             ResourceBundle messages;
 
