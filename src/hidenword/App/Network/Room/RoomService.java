@@ -6,6 +6,7 @@
 
 package hidenword.App.Network.Room;
 
+import hidenword.App.Network.Session.Session;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
@@ -21,6 +22,16 @@ public class RoomService {
         logger = Logger.getLogger(RoomService.class.getName());
     }
     
+    public Room createSoloRoom(Session session){
+        logger.info("New room created : ");
+        return null;
+    }
+    
+    public Room createDuelROom(Session session){
+        logger.info("New room created : ");
+        return null;
+    }
+    
     /**
      * Remove a room
      * @param room
@@ -28,6 +39,10 @@ public class RoomService {
     public void remove(Room room) {
         this.rooms.remove(room);
         logger.info("Room destroyed !");
+    }
+    
+    public Room getRoom(int index){
+        return rooms.get(index);
     }
     
     /**

@@ -15,6 +15,7 @@ final public class Player {
     private StringBuilder searchWord;
     private char currentChar;
     private PlayerGameState playerGameState;
+    private ArrayList<Character> charUsed;
 
     /**
      * Create a new player
@@ -113,6 +114,16 @@ final public class Player {
      */
     public void setCurrentChar(char currentChar) {
         this.currentChar = currentChar;
+        charUsed.add(currentChar);
+    }
+
+    public boolean isCharUsed(char currentChar){
+        for (Character charUsed1 : charUsed) {
+            if (charUsed1 == currentChar) {
+                return true;
+            }
+        }
+        return false;
     }
     
     /**
