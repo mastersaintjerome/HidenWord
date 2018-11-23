@@ -45,6 +45,9 @@ final public class Game {
             this.maxTry = maxTry;
             gameState = GameState.RUN;
             randomWord();
+            for(int i = 0;i < players.length;i++){
+                players[i].initSearchWord(word);
+            }
         } catch (IOException ex) {
             logger.log(Level.SEVERE, null, ex);
         }
@@ -110,7 +113,7 @@ final public class Game {
      * @param c
      * @return check if a char is in the word
      */
-    public boolean charInWord(char c){
+    private boolean charInWord(char c){
         return ((word.indexOf(c)) != -1);
     }
     
@@ -119,7 +122,7 @@ final public class Game {
      * @param c
      * @return ArrayList<Integer> with all indexes where the char is.
      */
-    public ArrayList<Integer> findIndexes(char c){
+    private ArrayList<Integer> findIndexes(char c){
         ArrayList<Integer> indexes = new ArrayList<Integer>();
         int index = word.indexOf(c);
         if(index >= -1){
