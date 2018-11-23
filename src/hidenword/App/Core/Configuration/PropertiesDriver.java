@@ -21,24 +21,26 @@ import java.util.logging.Logger;
  */
 final public class PropertiesDriver implements Driver{
     final private Properties properties;
+    final private Logger logger;
     
     /**
      * Create a new PropertiesDriver     
      * @param fileName
      */
     public PropertiesDriver(String fileName){
+        logger = Logger.getLogger(Configuration.class.getName());
         this.properties = new Properties();
         FileInputStream file = null;
         try {
             file = new FileInputStream(fileName);
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Configuration.class.getName()).log(Level.SEVERE, null, ex);
+            logger.log(Level.SEVERE, null, ex);
         }
         try{
             properties.load(file);
             file.close();
         }catch(IOException ex){
-            Logger.getLogger(Configuration.class.getName()).log(Level.SEVERE, null, ex);      
+            logger.log(Level.SEVERE, null, ex);      
         }
     }
     

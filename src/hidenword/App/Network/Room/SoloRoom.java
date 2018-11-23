@@ -27,11 +27,13 @@ final public class SoloRoom implements Room{
         this.session = session;
         GameFactory gameFactory = new SoloGameFactory();
         game = gameFactory.create();
+        player = new Player("NotSet");
         game.start(new Player[]{player}, MAXTRY);
     }
     @Override
     public void remove(Session session) {
         this.session = null;
+        this.player = null;
     }
 
     @Override

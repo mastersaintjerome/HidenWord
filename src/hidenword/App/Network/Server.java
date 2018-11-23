@@ -19,6 +19,7 @@ public final class Server implements Runnable {
     final private SessionService sessionService;
     volatile private boolean running = true;
     final private ExecutorService executor = Executors.newCachedThreadPool();
+    final private Logger logger;
     
     /**
      * Create a new Server
@@ -28,6 +29,7 @@ public final class Server implements Runnable {
     public Server(int port,SessionService sessionService) {
     	this.port = port;
         this.sessionService = sessionService;
+        logger = Logger.getLogger(Server.class.getName());
     }
     
     @Override
@@ -36,7 +38,7 @@ public final class Server implements Runnable {
             try {
                 executor.submit(sessionService.create(ss.accept()));
             } catch (IOException ex) {
-                Logger.getLogger(Server.class.getName()).severe(ex.getMessage());
+                logger.severe(ex.getMessage());
             }
         }
     }
@@ -46,7 +48,7 @@ public final class Server implements Runnable {
      * @throws IOException
      */
     public void start() throws IOException {
-    	Logger.getLogger(Server.class.getName()).log(Level.INFO, "Starting server at port : {0}", port);
+    	logger.log(Level.INFO, "Starting server at port : {0}", port);
     	ss = new ServerSocket(port);
     	executor.submit(this);
     }
@@ -61,8 +63,8 @@ public final class Server implements Runnable {
             ss.close();
             ss = null;
         } catch (IOException ex) {
-            Logger.getLogger(Server.class.getName()).severe(ex.getMessage());
-            Logger.getLogger(Server.class.getName()).info("Server failed to stop and Crashed !");
+            logger.severe(ex.getMessage());
+            logger.info("Server failed to stop and Crashed !");
         }
     }
 }

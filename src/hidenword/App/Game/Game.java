@@ -21,6 +21,7 @@ final public class Game {
     final private GameTurnStrategy gameTurn;
     private Player[] players;
     private GameState state;
+    final private Logger logger;
     
     /**
      * Create a new Game
@@ -28,6 +29,7 @@ final public class Game {
      */
     public Game(GameTurnStrategy gameTurn){
         this.gameTurn = gameTurn;
+        logger = Logger.getLogger(Game.class.getName());
     }
     
     /**
@@ -44,7 +46,7 @@ final public class Game {
             gameState = GameState.RUN;
             randomWord();
         } catch (IOException ex) {
-            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+            logger.log(Level.SEVERE, null, ex);
         }
     }
     

@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 final public class SessionService {
     private SessionHandler handler;
     final private Set<Session> sessions = new HashSet();
-    final private ArrayList<Room> rooms = new ArrayList();
+    final private Logger logger;
     
     /**
      * Create a SessionService
@@ -23,6 +23,7 @@ final public class SessionService {
      */
     public SessionService(SessionHandler handler) {
         this.handler = handler;
+        logger = Logger.getLogger(SessionService.class.getName());
     }
 
     
@@ -33,7 +34,7 @@ final public class SessionService {
      */
     public Session create(Socket clientSocket){
         Session session = new Session(clientSocket,this,handler);
-        Logger.getLogger(SessionService.class.getName()).info("New session created : " + session);
+        logger.info("New session created : " + session);
         sessions.add(session);
         return session;
     }
@@ -62,10 +63,6 @@ final public class SessionService {
      */
     public void remove(Session session) {
         this.sessions.remove(session);
-        Logger.getLogger(SessionService.class.getName()).info("Session destroyed !");
+        logger.info("Session destroyed !");
     }	
-
-    public ArrayList<Room> getRooms() {
-        return rooms;
-    }
 }

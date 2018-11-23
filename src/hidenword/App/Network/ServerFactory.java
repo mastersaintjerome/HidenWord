@@ -6,14 +6,13 @@
 
 package hidenword.App.Network;
 
-import hidenword.App.Network.Packet.In.Echo;
 import hidenword.App.Network.Packet.In.JoinDuelGame;
 import hidenword.App.Network.Packet.In.SessionClosed;
 import hidenword.App.Network.Packet.In.SessionStarted;
 import hidenword.App.Network.Packet.In.StartDuelGame;
 import hidenword.App.Network.Packet.In.StartSoloGame;
-import hidenword.App.Network.Packet.In.Stop;
 import hidenword.App.Network.Packet.PacketRegistryHandler;
+import hidenword.App.Network.Room.RoomService;
 import hidenword.App.Network.Session.SessionService;
 
 /**
@@ -25,6 +24,7 @@ final public class ServerFactory {
 
     // Store instance to ensure that only one instance is created
     private SessionService sessions;
+    private RoomService rooms;
     private Server server;
 
     public ServerFactory(int port) {
@@ -35,11 +35,10 @@ final public class ServerFactory {
      * Create the session service
      */
     public SessionService sessions() {
+        rooms = rooms();
         if (sessions == null) {
             PacketRegistryHandler packets = new PacketRegistryHandler(new PacketRegistryHandler.PacketHandler[]{
                 // @todo Set the input packets here
-                new Echo(),
-                new Stop(),
                 new SessionStarted()
             });
 
@@ -54,7 +53,14 @@ final public class ServerFactory {
 
         return sessions;
     }
-
+    
+    public RoomService rooms(){
+        if(rooms == null){
+            rooms = new RoomService();
+        }
+        return rooms;
+    }
+    
     /**
      * Create the server instance
      */

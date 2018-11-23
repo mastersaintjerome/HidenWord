@@ -1,5 +1,6 @@
 package hidenword.App.Network.Session;
 
+import hidenword.App.Network.Room.Room;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,7 +25,8 @@ final public class Session implements Runnable{
     private final SessionHandler handler;
     private PrintWriter writer;
     private boolean running = false;
-    private int roomId;
+    private Room room;
+    final private Logger logger;
 
     /**
      * Create a new Session
@@ -36,6 +38,7 @@ final public class Session implements Runnable{
         this.clientSocket = client;
         this.sessionService = sessionService;
         this.handler = handler;
+        logger = Logger.getLogger(Session.class.getName());
     }
 
     @Override
@@ -47,7 +50,7 @@ final public class Session implements Runnable{
             
             // Notify to handler that session is started
             handler.started(this);
-            Logger.getLogger(Session.class.getName()).log(Level.INFO, "Session {0} is started", this);
+            logger.log(Level.INFO, "Session {0} is started", this);
             
             StringBuilder packet = new StringBuilder(256);
             char curChar[] = new char[1];
@@ -64,16 +67,16 @@ final public class Session implements Runnable{
                 }
             }
         } catch (IOException ex) {
-            Logger.getLogger(Session.class.getName()).log(Level.SEVERE, null, ex);
+            logger.log(Level.SEVERE, null, ex);
         }finally{
             stop();
             handler.stopped(this);
-            Logger.getLogger(Session.class.getName()).log(Level.INFO, "Session {0} is stopped", this);
+            logger.log(Level.INFO, "Session {0} is stopped", this);
         }	
     }
 
     private void HandlePacket(String packet) {
-        Logger.getLogger(Session.class.getName()).log(Level.INFO, "Received Packet : {0} For session{1}", new Object[]{packet, this});
+        logger.log(Level.INFO, "Received Packet : {0} For session{1}", new Object[]{packet, this});
         handler.received(this, packet); 
     }
 
@@ -92,7 +95,7 @@ final public class Session implements Runnable{
                 clientSocket.close();
             }
         } catch (IOException ex) {
-            Logger.getLogger(Session.class.getName()).log(Level.SEVERE, null, ex);
+            logger.log(Level.SEVERE, null, ex);
         }
     }
     
@@ -109,17 +112,17 @@ final public class Session implements Runnable{
         }
 
         // Write packet to socket, with packet ending
-        Logger.getLogger(Session.class.getName()).log(Level.INFO, "Send packet {0} to session {1}", new Object[]{packet, this});
+        logger.log(Level.INFO, "Send packet {0} to session {1}", new Object[]{packet, this});
         writer.write(packet.toString());
         writer.write(END_OF_PACKET);
         writer.flush();
     }
 
-    public int getRoomId() {
-        return roomId;
+    public Room getRoom() {
+        return room;
     }
 
-    public void setRoomId(int roomId) {
-        this.roomId = roomId;
+    public void setRoom(Room room) {
+        this.room = room;
     }
 }
