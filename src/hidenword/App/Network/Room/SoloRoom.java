@@ -36,6 +36,11 @@ final public class SoloRoom implements Room{
         this.player = null;
     }
 
+    public void close(){
+        remove(this.session);
+        game = null;
+    }
+    
     @Override
     public boolean join(Session session) {
         this.session = session;

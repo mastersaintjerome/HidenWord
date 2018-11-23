@@ -35,6 +35,14 @@ final public class DuelRoom implements Room{
         players.remove(session);
     }
 
+    public void close(){
+        for(Map.Entry<Session, Player> entry : players.entrySet()){
+            entry.setValue(null);
+        }
+        players.clear();
+        game = null;
+    }
+    
     @Override
     public boolean join(Session session) {
         if(players.size() < 2){
