@@ -1,6 +1,5 @@
 package hidenword.App.Network.Session;
 
-import hidenword.App.Network.Room.Room;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Collection;

@@ -1,6 +1,6 @@
 package hidenword.App.Network.Session;
 
-import hidenword.App.Network.Room.Room;
+import hidenword.App.Game.Player;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -25,7 +25,7 @@ final public class Session implements Runnable{
     private final SessionHandler handler;
     private PrintWriter writer;
     private boolean running = false;
-    private Room room;
+    private Player player;
     final private Logger logger;
 
     /**
@@ -118,11 +118,11 @@ final public class Session implements Runnable{
         writer.flush();
     }
 
-    public Room getRoom() {
-        return room;
+    public Player getPlayer() {
+        return player;
     }
 
-    public void setRoom(Room room) {
-        this.room = room;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 }

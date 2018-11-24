@@ -6,31 +6,26 @@
 
 package hidenword.App.Network.Packet.In;
 
+import hidenword.App.Game.GameService;
 import hidenword.App.Network.Packet.Out.StartDuelGameAccept;
 import hidenword.App.Network.Packet.PacketRegistryHandler;
-import hidenword.App.Network.Room.DuelRoom;
-import hidenword.App.Network.Room.Room;
 import hidenword.App.Network.Session.Session;
-import hidenword.App.Network.Session.SessionService;
 
 /**
  * Packet when a Player want to start a duel game
  * @author Gaëtan
  */
 final public class StartDuelGame implements PacketRegistryHandler.PacketHandler {
-    final private SessionService service;
+    final private GameService service;
     
-    public StartDuelGame(SessionService service) {
+    public StartDuelGame(GameService service) {
         this.service = service;
     }
     
     @Override
     public void handle(Session session, String packet) {
         StartDuelGameAccept startDuelGameAccept = new StartDuelGameAccept(session);
-        Room newDuelRoom = new DuelRoom();
-        service.getRooms().add(newDuelRoom);
-        session.setRoomId(service.getRooms().indexOf(newDuelRoom));
-        service.getRooms().get(session.getRoomId()).create(session);
+        service.create(session, false);
         session.write(startDuelGameAccept);
     }
 

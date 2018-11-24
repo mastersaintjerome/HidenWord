@@ -16,7 +16,11 @@ final public class DuelTurnStrategy implements GameTurnStrategy{
 
     @Override
     public void nextTurn(Game game) {
-        game.playerGameturn(game.getPlayers()[0]);
-        game.playerGameturn(game.getPlayers()[1]);
+        if(game.getTurnCounter()%2 == 0){
+            game.playerGameturn(game.getPlayers().get(0));
+        }
+        if(game.getTurnCounter()%2 == 1){ 
+            game.playerGameturn(game.getPlayers().get(1));
+        }
     }
 }

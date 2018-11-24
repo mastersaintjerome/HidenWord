@@ -6,33 +6,27 @@
 
 package hidenword.App.Network.Packet.In;
 
+import hidenword.App.Game.GameService;
 import hidenword.App.Network.Packet.Out.StartSoloGameAccept;
 import hidenword.App.Network.Packet.PacketRegistryHandler;
-import hidenword.App.Network.Room.Room;
-import hidenword.App.Network.Room.SoloRoom;
 import hidenword.App.Network.Session.Session;
-import hidenword.App.Network.Session.SessionService;
 
 /**
  * Packet when a Player want to start a solo game
  * @author Gaëtan
  */
 final public class StartSoloGame implements PacketRegistryHandler.PacketHandler {
-    final private SessionService service;
+    final private GameService service;
     
-    public StartSoloGame(SessionService service) {
+    public StartSoloGame(GameService service) {
         this.service = service;
     }
     
     @Override
     public void handle(Session session, String packet) {
         StartSoloGameAccept startSoloGameAccept = new StartSoloGameAccept(session);
-        Room newSoloRoom = new SoloRoom();
-        service.getRooms().add(newSoloRoom);
-        session.setRoomId(service.getRooms().indexOf(newSoloRoom));
-        Room room = service.getRooms().get(session.getRoomId());
-        room.create(session);
-        
+        service.create(session, false);
+        service.getGame(session).start();
         session.write(startSoloGameAccept);
     }
 

@@ -1,13 +1,14 @@
 package hidenword.App.Game;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Player Class, define a player
  * @author Gaëtan
  */
 final public class Player {
-    private String pseudo;
+    final private String pseudo;
     private int score;
     private int winGame;
     private int defeatGame;
@@ -15,7 +16,8 @@ final public class Player {
     private StringBuilder searchWord;
     private char currentChar;
     private PlayerGameState playerGameState;
-    private ArrayList<Character> charUsed;
+    private List<Character> charUsed;
+    private Game game;
 
     /**
      * Create a new player
@@ -26,6 +28,23 @@ final public class Player {
         this.score = 0;
         this.playerCurrentTry = 0;
         searchWord = new StringBuilder();
+        charUsed = new ArrayList();
+    }
+    
+    /**
+     * return the game object
+     * @return game
+     */
+    public Game getGame(){
+        return this.game;
+    }
+    
+    /**
+     * Set the game
+     * @param game
+     */
+    public void setGame(Game game){
+        this.game = game;
     }
 
     /**
@@ -63,10 +82,6 @@ final public class Player {
      */
     public String getPseudo() {
         return pseudo;
-    }
-
-    public void setPseudo(String pseudo) {
-        this.pseudo = pseudo;
     }
     
     /**
@@ -117,6 +132,11 @@ final public class Player {
         charUsed.add(currentChar);
     }
 
+    /**
+     * Is char already used
+     * @param currentChar
+     * @return true if char already used
+     */
     public boolean isCharUsed(char currentChar){
         for (Character charUsed1 : charUsed) {
             if (charUsed1 == currentChar) {
@@ -143,10 +163,10 @@ final public class Player {
      * Set the char found in the search word
      * @param indexes
      */
-    public void setCharFoundinSearchWord(ArrayList<Integer> indexes){
+    public void setCharFoundinSearchWord(List<Integer> indexes){
         int size = indexes.size();
         for(int i =0; i < size - 1;i++){
-            searchWord.setCharAt(i,currentChar);
+            searchWord.setCharAt(indexes.get(i),currentChar);
         }
     }
 }

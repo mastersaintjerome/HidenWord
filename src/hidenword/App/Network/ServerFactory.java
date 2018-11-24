@@ -6,13 +6,13 @@
 
 package hidenword.App.Network;
 
+import hidenword.App.Game.GameService;
 import hidenword.App.Network.Packet.In.JoinDuelGame;
 import hidenword.App.Network.Packet.In.SessionClosed;
 import hidenword.App.Network.Packet.In.SessionStarted;
 import hidenword.App.Network.Packet.In.StartDuelGame;
 import hidenword.App.Network.Packet.In.StartSoloGame;
 import hidenword.App.Network.Packet.PacketRegistryHandler;
-import hidenword.App.Network.Room.RoomService;
 import hidenword.App.Network.Session.SessionService;
 
 /**
@@ -24,8 +24,8 @@ final public class ServerFactory {
 
     // Store instance to ensure that only one instance is created
     private SessionService sessions;
-    private RoomService rooms;
     private Server server;
+    private GameService gameService;
 
     public ServerFactory(int port) {
         this.port = port;
@@ -35,7 +35,6 @@ final public class ServerFactory {
      * Create the session service
      */
     public SessionService sessions() {
-        rooms = rooms();
         if (sessions == null) {
             PacketRegistryHandler packets = new PacketRegistryHandler(new PacketRegistryHandler.PacketHandler[]{
                 // @todo Set the input packets here
@@ -46,19 +45,19 @@ final public class ServerFactory {
 
             // @todo register packets which required the session service
             packets.register(new SessionClosed(sessions));
-            packets.register(new StartSoloGame(sessions)); 
-            packets.register(new StartDuelGame(sessions));
-            packets.register(new JoinDuelGame(sessions));
+            packets.register(new StartSoloGame(gameService)); 
+            packets.register(new StartDuelGame(gameService));
+            packets.register(new JoinDuelGame(gameService));
         }
 
         return sessions;
     }
     
-    public RoomService rooms(){
-        if(rooms == null){
-            rooms = new RoomService();
-        }
-        return rooms;
+    public GameService gameService(){
+        if(gameService == null){
+            gameService = new GameService();
+        }      
+        return gameService;
     }
     
     /**

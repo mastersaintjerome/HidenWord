@@ -5,6 +5,7 @@ import hidenword.App.Core.File.FileProcessor;
 import hidenword.App.Game.GameStrategy.GameTurnStrategy;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 import java.util.logging.Level;
@@ -19,9 +20,10 @@ final public class Game {
     private int maxTry;
     private GameState gameState;
     final private GameTurnStrategy gameTurn;
-    private Player[] players;
+    private List<Player> players;
     private GameState state;
     final private Logger logger;
+    private int turnCounter;
     
     /**
      * Create a new Game
@@ -30,27 +32,32 @@ final public class Game {
     public Game(GameTurnStrategy gameTurn){
         this.gameTurn = gameTurn;
         logger = Logger.getLogger(Game.class.getName());
+        turnCounter = (int) (Math.random()*2);
     }
     
     /**
      * Start a Game
-     * @param players
-     * @param word
-     * @param maxTry
      */
-    public void start(Player[] players,int maxTry){
+    public void start(){
         try {
-            this.players = players;
-            this.word = word;
-            this.maxTry = maxTry;
             gameState = GameState.RUN;
             randomWord();
-            for(int i = 0;i < players.length;i++){
-                players[i].initSearchWord(word);
+            for(int i = 0;i < players.size();i++){
+                players.get(i).initSearchWord(word);
             }
         } catch (IOException ex) {
             logger.log(Level.SEVERE, null, ex);
         }
+    }
+    
+    /**
+     * Init the Players and maxTry
+     * @param players
+     * @param maxTry
+     */
+    public void init(List<Player> players,int maxTry){
+        this.players = players;
+        this.maxTry = maxTry;
     }
     
     /**
@@ -90,8 +97,27 @@ final public class Game {
         return maxTry;
     }
 
-    public Player[] getPlayers() {
+    /**
+     * return the players a List
+     * @return Players
+     */
+    public List<Player> getPlayers() {
         return players;
+    }
+
+    /**
+     * return the current turn counter
+     * @return turnCounter
+     */
+    public int getTurnCounter() {
+        return turnCounter;
+    }
+
+    /**
+     * Next turn counter (turnCounter++)
+     */
+    public void turnCounter() {
+        this.turnCounter++;
     }
 
     /**
@@ -122,8 +148,8 @@ final public class Game {
      * @param c
      * @return ArrayList<Integer> with all indexes where the char is.
      */
-    private ArrayList<Integer> findIndexes(char c){
-        ArrayList<Integer> indexes = new ArrayList<Integer>();
+    private List<Integer> findIndexes(char c){
+        List<Integer> indexes = new ArrayList<Integer>();
         int index = word.indexOf(c);
         if(index >= -1){
             indexes.add(index);

@@ -16,6 +16,6 @@ final public class SoloTurnStrategy implements GameTurnStrategy{
 
     @Override
     public void nextTurn(Game game) {
-        game.playerGameturn(game.getPlayers()[0]);
+        game.playerGameturn(game.getPlayers().get(0));
     }
 }
