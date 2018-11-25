@@ -24,9 +24,10 @@ final public class StartSoloGame implements PacketRegistryHandler.PacketHandler 
     
     @Override
     public void handle(Session session, String packet) {
-        StartSoloGameAccept startSoloGameAccept = new StartSoloGameAccept(session);
         service.create(session, false);
         service.getGame(session).start();
+        String searchWord = service.getPlayer(session).getSearchWord().toString();
+        StartSoloGameAccept startSoloGameAccept = new StartSoloGameAccept(session,searchWord);
         session.write(startSoloGameAccept);
     }
 

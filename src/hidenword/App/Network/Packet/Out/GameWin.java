@@ -9,22 +9,22 @@ package hidenword.App.Network.Packet.Out;
 import hidenword.App.Network.Session.Session;
 
 /**
- * Answer of Packet when a Player want to start a solo game
- * Response for {@link StartSoloGame}
+ * Packet Send when player win
  * @author Gaëtan
  */
-final public class StartSoloGameAccept {
+public class GameWin {
     final private Session session;
-    private final String searchWord;
     
-
-    public StartSoloGameAccept(Session session,String searchWord) {
+    /**
+     * Constructor of GameWin packet
+     * @param session
+     */
+    public GameWin(Session session) {
         this.session = session;
-        this.searchWord = searchWord;
     }
 
     @Override
     public String toString() {
-        return "SOLOA " + searchWord;
+        return "GWIN " + session;
     }
 }

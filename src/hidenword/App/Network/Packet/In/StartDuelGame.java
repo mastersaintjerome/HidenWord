@@ -25,7 +25,7 @@ final public class StartDuelGame implements PacketRegistryHandler.PacketHandler 
     @Override
     public void handle(Session session, String packet) {
         StartDuelGameAccept startDuelGameAccept = new StartDuelGameAccept(session);
-        service.create(session, false);
+        service.create(session, true);
         session.write(startDuelGameAccept);
     }
 
