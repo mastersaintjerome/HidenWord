@@ -15,7 +15,7 @@ import hidenword.App.Game.Game;
 final public class DuelTurnStrategy implements GameTurnStrategy{
 
     @Override
-    public void nextTurn(Game game) {
-        game.playerGameturn(game.getPlayerByPosition());
+    public boolean nextTurn(Game game) {
+        return game.playerGameturn(game.getPlayerByPosition());
     }
 }

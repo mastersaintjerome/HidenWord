@@ -40,6 +40,7 @@ public class GameService {
         Game game = gameFactory.create();
         Player player = new Player("P1");
         player.setGame(game);
+        player.setSession(session);
         players.put(session, player);
         session.setPlayer(player);
         List<Player> gamePlayers = new ArrayList();
@@ -72,6 +73,7 @@ public class GameService {
     public boolean join(Session session,int gameId){
         if(gameId < games.size() && gameId >= 0){
             Player player = new Player("P2");
+            player.setSession(session);
             players.put(session, player);
             session.setPlayer(player);
             return games.get(gameId).addPlayer(player);

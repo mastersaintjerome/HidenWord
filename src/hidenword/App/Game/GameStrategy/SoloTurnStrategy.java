@@ -15,7 +15,7 @@ import hidenword.App.Game.Game;
 final public class SoloTurnStrategy implements GameTurnStrategy{
 
     @Override
-    public void nextTurn(Game game) {
-        game.playerGameturn(game.getPlayers().get(0));
+    public boolean nextTurn(Game game) {
+        return game.playerGameturn(game.getPlayers().get(0));
     }
 }

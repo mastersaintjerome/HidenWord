@@ -7,6 +7,7 @@
 package hidenword.App.Network.Packet.In;
 
 import hidenword.App.Game.GameService;
+import hidenword.App.Game.Player;
 import hidenword.App.Network.Packet.Out.JoinDuelGameAccept;
 import hidenword.App.Network.Packet.Out.JoinDuelGameRefuse;
 import hidenword.App.Network.Packet.PacketRegistryHandler;
@@ -30,7 +31,10 @@ final public class JoinDuelGame implements PacketRegistryHandler.PacketHandler {
         int gameId = Integer.parseInt(gameIdSTR);
         if(service.join(session, gameId)){
             JoinDuelGameAccept joinDuelGameAccept = new JoinDuelGameAccept(session);
-            session.write(joinDuelGameAccept);
+            for(Player player : service.getGame(session).getPlayers()){
+                player.getSession().write(joinDuelGameAccept);
+            }
+            //session.write(joinDuelGameAccept);
         }else{
             JoinDuelGameRefuse joinDuelGameRefuse = new JoinDuelGameRefuse(session);
             session.write(joinDuelGameRefuse);

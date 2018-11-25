@@ -112,6 +112,7 @@ final public class Game {
      */
     public boolean addPlayer(Player player){
         if(players.size() < 2){
+            player.setGame(this);
             players.add(player);
             return true;
         }
@@ -196,29 +197,35 @@ final public class Game {
     /**
      * A player turn
      * @param player
+     * @return return if char accepted return true
      */
-    public void playerGameturn(Player player){
+    public boolean playerGameturn(Player player){
         char c = player.getCurrentChar();
-        //We don't count the try if player is right
-        if(charInWord(c)){
-            player.setCharFoundinSearchWord(findIndexes(c));
-        }else{
-            player.playerTry();
+        if(!player.isCharUsed(c)){
+            //We don't count the try if player is right
+            if(charInWord(c)){
+                player.setCharFoundinSearchWord(findIndexes(c));
+            }else{
+                player.playerTry();
+            }
+            if(isGameOver(player)){
+                player.setPlayerGameState(Player.PlayerGameState.LOST);
+                gameState = GameState.END;
+            }else if(isWin(player)){
+                player.setPlayerGameState(Player.PlayerGameState.WIN);
+                gameState = GameState.END;
+            }
+            return true;
         }
-        if(isGameOver(player)){
-            player.setPlayerGameState(Player.PlayerGameState.LOST);
-            gameState = GameState.END;
-        }else if(isWin(player)){
-            player.setPlayerGameState(Player.PlayerGameState.WIN);
-            gameState = GameState.END;
-        }
+        return false;
     }
     
     /**
      * Make a Game Turn
+     * @return if char accepted return true
      */
-    public void nextTurn(){
-        gameTurn.nextTurn(this);
+    public boolean nextTurn(){
+        return gameTurn.nextTurn(this);
     }
     
     /**

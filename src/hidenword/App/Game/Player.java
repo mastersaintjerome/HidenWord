@@ -1,5 +1,6 @@
 package hidenword.App.Game;
 
+import hidenword.App.Network.Session.Session;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -19,6 +20,7 @@ final public class Player {
     private PlayerGameState playerGameState;
     private final Set<Character> charUsed;
     private Game game;
+    private Session session;
 
     /**
      * Create a new player
@@ -30,6 +32,22 @@ final public class Player {
         this.playerCurrentTry = 0;
         searchWord = new StringBuilder();
         charUsed = new HashSet();
+    }
+
+    /**
+     * return the session
+     * @return Session
+     */
+    public Session getSession() {
+        return session;
+    }
+
+    /**
+     * Set the session
+     * @param session
+     */
+    public void setSession(Session session) {
+        this.session = session;
     }
     
     /**
