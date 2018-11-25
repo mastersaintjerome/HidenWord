@@ -25,7 +25,9 @@ final public class JoinDuelGame implements PacketRegistryHandler.PacketHandler {
     
     @Override
     public void handle(Session session, String packet) {
-        int gameId = 0;
+        String[] parts = packet.split(" ", 2);
+        String gameIdSTR = parts[1];
+        int gameId = Integer.parseInt(gameIdSTR);
         if(service.join(session, gameId)){
             JoinDuelGameAccept joinDuelGameAccept = new JoinDuelGameAccept(session);
             session.write(joinDuelGameAccept);
@@ -33,7 +35,6 @@ final public class JoinDuelGame implements PacketRegistryHandler.PacketHandler {
             JoinDuelGameRefuse joinDuelGameRefuse = new JoinDuelGameRefuse(session);
             session.write(joinDuelGameRefuse);
         }
-        
     }
 
     @Override

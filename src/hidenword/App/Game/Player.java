@@ -1,7 +1,8 @@
 package hidenword.App.Game;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Player Class, define a player
@@ -10,13 +11,13 @@ import java.util.List;
 final public class Player {
     final private String pseudo;
     private int score;
-    private int winGame;
-    private int defeatGame;
+    //private int winGame;
+    //private int defeatGame;
     private int playerCurrentTry;
     private StringBuilder searchWord;
     private char currentChar;
     private PlayerGameState playerGameState;
-    private List<Character> charUsed;
+    private final Set<Character> charUsed;
     private Game game;
 
     /**
@@ -28,7 +29,7 @@ final public class Player {
         this.score = 0;
         this.playerCurrentTry = 0;
         searchWord = new StringBuilder();
-        charUsed = new ArrayList();
+        charUsed = new HashSet();
     }
     
     /**
@@ -152,7 +153,7 @@ final public class Player {
      */
     public void initSearchWord(String word){
         int length = word.length();
-        for (int i = 0; i < length - 1; i++){
+        for (int i = 0; i < length; i++){
             searchWord.append("_");
         }
         searchWord.setCharAt(0,word.charAt(0));
@@ -164,9 +165,8 @@ final public class Player {
      * @param indexes
      */
     public void setCharFoundinSearchWord(List<Integer> indexes){
-        int size = indexes.size();
-        for(int i =0; i < size - 1;i++){
-            searchWord.setCharAt(indexes.get(i),currentChar);
+        for (Integer indexe : indexes) {
+            searchWord.setCharAt(indexe, currentChar);
         }
     }
 }

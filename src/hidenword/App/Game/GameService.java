@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  * @author Gaëtan
  */
 public class GameService {
-    final private int MAXTRY = 10;
+    final private int MAXTRY = 15;
     final private Map<Session,Player> players = new HashMap();
     final private List<Game> games = new ArrayList();
     final private Logger logger; 
@@ -70,12 +70,11 @@ public class GameService {
      * @return true if it works false if not
      */
     public boolean join(Session session,int gameId){
-        if(games.get(gameId).getPlayers().size() < 2){
+        if(gameId < games.size() && gameId >= 0){
             Player player = new Player("P2");
             players.put(session, player);
             session.setPlayer(player);
-            games.get(gameId).getPlayers().add(player);
-            return true;
+            return games.get(gameId).addPlayer(player);
         }
         return false;
     }

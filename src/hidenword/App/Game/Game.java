@@ -32,7 +32,7 @@ final public class Game {
     public Game(GameTurnStrategy gameTurn){
         this.gameTurn = gameTurn;
         logger = Logger.getLogger(Game.class.getName());
-        turnCounter = (int) (Math.random()*2);
+        turnCounter = 0;
     }
     
     /**
@@ -42,8 +42,8 @@ final public class Game {
         try {
             gameState = GameState.RUN;
             randomWord();
-            for(int i = 0;i < players.size();i++){
-                players.get(i).initSearchWord(word);
+            for (Player player : players) {
+                player.initSearchWord(word);
             }
         } catch (IOException ex) {
             logger.log(Level.SEVERE, null, ex);
@@ -103,6 +103,19 @@ final public class Game {
      */
     public List<Player> getPlayers() {
         return players;
+    }
+    
+    /**
+     * add a player on the game
+     * @param player
+     * @return true if player add, false if not
+     */
+    public boolean addPlayer(Player player){
+        if(players.size() < 2){
+            players.add(player);
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -206,5 +219,13 @@ final public class Game {
      */
     public void nextTurn(){
         gameTurn.nextTurn(this);
+    }
+    
+    /**
+     * Get the player who should play the turn
+     * @return Player
+     */
+    public Player getPlayerByPosition(){
+        return players.get(this.turnCounter%2);
     }
 }
