@@ -7,12 +7,16 @@
 package hidenword.App.Core.Configuration;
 
 /**
- *
+ * Configuration class, use to get value from config file
  * @author Gaëtan
  */
 final public class Configuration {
     final private Driver driver;
     
+    /**
+     * Constructor take the driver in parameter
+     * @param driver
+     */
     public Configuration(Driver driver){
         this.driver = driver;
     }

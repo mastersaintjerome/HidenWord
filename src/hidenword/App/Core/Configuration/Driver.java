@@ -14,6 +14,7 @@ public interface Driver {
     /**
      * Check if the configuration has the key
      * @param key Configuration item to check
+     * @return boolean
      */
     public boolean has(String key);
 

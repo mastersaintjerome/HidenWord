@@ -1,5 +1,6 @@
 package hidenword.App.Network;
 
+import hidenword.App.Game.GameService;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.concurrent.ExecutorService;
@@ -17,6 +18,7 @@ public final class Server implements Runnable {
     private ServerSocket ss;
     final private int port;
     final private SessionService sessionService;
+    final private GameService gameService;
     volatile private boolean running = true;
     final private ExecutorService executor = Executors.newCachedThreadPool();
     final private Logger logger;
@@ -26,9 +28,10 @@ public final class Server implements Runnable {
      * @param port
      * @param sessionService
      */
-    public Server(int port,SessionService sessionService) {
+    public Server(int port,SessionService sessionService,GameService gameService) {
     	this.port = port;
         this.sessionService = sessionService;
+        this.gameService = gameService;
         logger = Logger.getLogger(Server.class.getName());
     }
     
@@ -60,6 +63,7 @@ public final class Server implements Runnable {
         try {
             running = false;
             sessionService.stopAll();
+            gameService.close();
             ss.close();
             ss = null;
         } catch (IOException ex) {

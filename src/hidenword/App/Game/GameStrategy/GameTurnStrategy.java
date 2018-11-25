@@ -13,5 +13,11 @@ import hidenword.App.Game.Game;
  * @author Gaëtan
  */
 public interface GameTurnStrategy {
+
+    /**
+     * If player can't use the char return false
+     * @param game
+     * @return boolean
+     */
     public boolean nextTurn(Game game);
 }

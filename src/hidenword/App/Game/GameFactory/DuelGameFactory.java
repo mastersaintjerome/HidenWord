@@ -15,6 +15,10 @@ import hidenword.App.Game.GameStrategy.DuelTurnStrategy;
  */
 public class DuelGameFactory implements GameFactory{
 
+    /**
+     * Return a new DuelGame
+     * @return Game
+     */
     @Override
     public Game create() {
         return new Game(new DuelTurnStrategy());

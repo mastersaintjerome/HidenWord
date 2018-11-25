@@ -27,10 +27,18 @@ public class GameService {
     final private Logger logger; 
     GameFactory gameFactory;
     
+    /**
+     * Constructor of GameService
+     */
     public GameService(){
         logger = Logger.getLogger(GameService.class.getName());
     }
     
+    /**
+     * create a new game
+     * @param session
+     * @param duel
+     */
     public void create(Session session, boolean duel){
         if(duel){
             gameFactory = new DuelGameFactory();
@@ -49,10 +57,23 @@ public class GameService {
         games.add(game);
     }
     
+    /**
+     * Get a game
+     * @param session
+     * @return Game
+     */
     public Game getGame(Session session){
         return players.get(session).getGame();
     }
     
+    public Player getPlayer(Session session){
+        return players.get(session);
+    }
+    
+    /**
+     * Get all duel game IDs
+     * @return Integer List
+     */
     public List<Integer> getDuelGameIds(){
         List<Integer> duelGameIds = new ArrayList();
         for (Game game : games) {
@@ -63,10 +84,17 @@ public class GameService {
         return duelGameIds;
     }
     
+    /**
+     * Remove a players from game
+     * @param session
+     */
     public void remove(Session session){
         players.remove(session);
     }
     
+    /**
+     * Close the game service
+     */
     public void close(){
         for(Map.Entry<Session, Player> entry : players.entrySet()){
             entry.setValue(null);
@@ -76,8 +104,9 @@ public class GameService {
     }
     
     /**
-     * join a a room
+     * session join a game at the gameId
      * @param session
+     * @param gameId
      * @return true if it works false if not
      */
     public boolean join(Session session,int gameId){

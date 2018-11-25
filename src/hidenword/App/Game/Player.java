@@ -94,6 +94,14 @@ final public class Player {
     public void setPlayerGameState(PlayerGameState playerGameState){
         this.playerGameState = playerGameState;
     }
+
+    /**
+     * return the current GameState of the player
+     * @return PlayerGameState
+     */
+    public PlayerGameState getPlayerGameState() {
+        return playerGameState;
+    }
     
     /**
      *

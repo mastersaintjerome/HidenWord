@@ -7,6 +7,8 @@
 package hidenword.App.Network;
 
 import hidenword.App.Game.GameService;
+import hidenword.App.Network.Packet.In.AskGamesRoom;
+import hidenword.App.Network.Packet.In.GameTurnCharReceived;
 import hidenword.App.Network.Packet.In.JoinDuelGame;
 import hidenword.App.Network.Packet.In.SessionClosed;
 import hidenword.App.Network.Packet.In.SessionStarted;
@@ -35,6 +37,7 @@ final public class ServerFactory {
      * Create the session service
      */
     public SessionService sessions() {
+        gameService = gameService();
         if (sessions == null) {
             PacketRegistryHandler packets = new PacketRegistryHandler(new PacketRegistryHandler.PacketHandler[]{
                 // @todo Set the input packets here
@@ -48,6 +51,8 @@ final public class ServerFactory {
             packets.register(new StartSoloGame(gameService)); 
             packets.register(new StartDuelGame(gameService));
             packets.register(new JoinDuelGame(gameService));
+            packets.register(new GameTurnCharReceived(gameService));
+            packets.register(new AskGamesRoom(gameService));
         }
 
         return sessions;
@@ -65,7 +70,7 @@ final public class ServerFactory {
      */
     public Server server() {
         if (server == null) {
-            server = new Server(port, sessions());
+            server = new Server(port, sessions(),gameService);
         }
         return server;
     }

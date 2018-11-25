@@ -12,6 +12,14 @@ package hidenword.App.Core.Configuration;
  */
 final public class Properties {
     // Properties (user configurable)
-    public static final String DICOS_DIRECTORY = "dico.directory";
+
+    /**
+     * DICOS_DIRECTORY , the dico directory key in properties config file
+     */
+        public static final String DICOS_DIRECTORY = "dico.directory";
+
+    /**
+     * DICO_FILENAME_EXTENSION , dico filename extension key in properties config file
+     */
     public static final String DICO_FILENAME_EXTENSION = "dico.extension";
 }

@@ -13,5 +13,10 @@ import hidenword.App.Game.Game;
  * @author Gaëtan
  */
 public interface GameFactory {
+
+    /**
+     * Create a new Game
+     * @return Game
+     */
     public Game create();
 }

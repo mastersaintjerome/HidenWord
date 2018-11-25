@@ -31,6 +31,7 @@ final public class JoinDuelGame implements PacketRegistryHandler.PacketHandler {
         int gameId = Integer.parseInt(gameIdSTR);
         if(service.join(session, gameId)){
             JoinDuelGameAccept joinDuelGameAccept = new JoinDuelGameAccept(session);
+            service.getGame(session).start();
             for(Player player : service.getGame(session).getPlayers()){
                 player.getSession().write(joinDuelGameAccept);
             }

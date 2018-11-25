@@ -15,6 +15,10 @@ import hidenword.App.Game.GameStrategy.SoloTurnStrategy;
  */
 public class SoloGameFactory implements GameFactory{
 
+    /**
+     * Create a new Solo Game
+     * @return Game
+     */
     @Override
     public Game create() {
         return new Game(new SoloTurnStrategy());

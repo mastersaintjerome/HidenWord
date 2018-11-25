@@ -14,16 +14,16 @@ import hidenword.App.Network.Session.Session;
  */
 public class GameTurnCharAccepted {
     final private Session session;
-    private final char c;
+    private final String serchedWord;
     
 
-    public GameTurnCharAccepted(Session session,char c) {
+    public GameTurnCharAccepted(Session session,String serchedWord) {
         this.session = session;
-        this.c = c;
+        this.serchedWord = serchedWord;
     }
 
     @Override
     public String toString() {
-        return "GTCRA " + c;
+        return "GTCRA " + serchedWord;
     }
 }

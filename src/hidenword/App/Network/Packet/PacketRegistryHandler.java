@@ -22,7 +22,15 @@ import java.util.Map;
  * @author Gaëtan
  */
 public final class PacketRegistryHandler implements SessionHandler{
+
+    /**
+     * SESSION_STARTED packet code
+     */
     final static public String SESSION_STARTED = "\0SESSION_STARTED\0";
+
+    /**
+     * SESSION_STOPPED packet code
+     */
     final static public String SESSION_STOPPED = "\0SESSION_STOPPED\0";
     
     /**

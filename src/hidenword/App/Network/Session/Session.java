@@ -118,10 +118,18 @@ final public class Session implements Runnable{
         writer.flush();
     }
 
+    /**
+     * return the player object
+     * @return Player
+     */
     public Player getPlayer() {
         return player;
     }
 
+    /**
+     * Set the player object
+     * @param player
+     */
     public void setPlayer(Player player) {
         this.player = player;
     }
