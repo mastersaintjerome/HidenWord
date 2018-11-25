@@ -136,6 +136,14 @@ final public class Game {
     }
     
     /**
+     * True if game is end, false if not
+     * @return boolean
+     */
+    public boolean isEnd(){
+        return (state == GameState.END);
+    }
+    
+    /**
      * return the current turn counter
      * @return turnCounter
      */
