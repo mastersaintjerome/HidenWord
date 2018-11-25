@@ -26,7 +26,6 @@ final public class GameTurnCharReceived implements PacketRegistryHandler.PacketH
     public void handle(Session session, String packet) {
         String[] parts = packet.split(" ", 2);
         String receivedChar = parts[1];
-        
     }
 
     @Override

@@ -23,6 +23,6 @@ final public class StartSoloGameAccept {
 
     @Override
     public String toString() {
-        return "SOLOA" + session;
+        return "SOLOA " + session;
     }
 }

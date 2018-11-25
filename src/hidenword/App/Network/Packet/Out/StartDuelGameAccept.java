@@ -22,6 +22,6 @@ final public class StartDuelGameAccept {
 
     @Override
     public String toString() {
-        return "DUELA" + session;
+        return "DUELA " + session;
     }
 }
