@@ -120,6 +120,22 @@ final public class Game {
     }
 
     /**
+     * Return the current GameState
+     * @return GameState
+     */
+    public GameState getState() {
+        return state;
+    }
+    
+    /**
+     * True if game is running, false if not
+     * @return boolean
+     */
+    public boolean isRunning(){
+        return (state == GameState.RUN);
+    }
+    
+    /**
      * return the current turn counter
      * @return turnCounter
      */

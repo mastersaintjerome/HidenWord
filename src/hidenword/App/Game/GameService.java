@@ -53,6 +53,16 @@ public class GameService {
         return players.get(session).getGame();
     }
     
+    public List<Integer> getDuelGameIds(){
+        List<Integer> duelGameIds = new ArrayList();
+        for (Game game : games) {
+            if(!game.isRunning()){
+                duelGameIds.add(games.indexOf(game));
+            }
+        }
+        return duelGameIds;
+    }
+    
     public void remove(Session session){
         players.remove(session);
     }

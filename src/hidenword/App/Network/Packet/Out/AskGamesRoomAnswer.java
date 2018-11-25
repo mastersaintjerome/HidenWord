@@ -9,21 +9,21 @@ package hidenword.App.Network.Packet.Out;
 import hidenword.App.Network.Session.Session;
 
 /**
- *
+ * Answer when client ask for games room
  * @author Gaëtan
  */
-public class GameTurnCharRefused {
+public class AskGamesRoomAnswer {
     final private Session session;
-    private final char c;
+    private final String message;
     
 
-    public GameTurnCharRefused(Session session,char c) {
+    public AskGamesRoomAnswer(Session session,String message) {
         this.session = session;
-        this.c = c;
+        this.message = message;
     }
 
     @Override
     public String toString() {
-        return "GTCRR " + c;
+        return "AGROOMA " + message;
     }
 }
