@@ -9,19 +9,22 @@ package hidenword.App.Network.Packet.Out;
 import hidenword.App.Network.Session.Session;
 
 /**
- * Answer of Packet when a Player want to join a duel game
- * Response for {@link JoinDuelGame}
+ * Packet tell client it's his turn
  * @author Gaëtan
  */
-final public class JoinDuelGameAccept {
+public class NextTurn {
     final private Session session;  
 
-    public JoinDuelGameAccept(Session session) {
+    /**
+     * Constructor of NextTurn
+     * @param session
+     */
+    public NextTurn(Session session) {
         this.session = session;
     }
 
     @Override
     public String toString() {
-        return "DUELAJ " + session.getPlayer().getPseudo();
+        return "PLAY " + session;
     }
 }

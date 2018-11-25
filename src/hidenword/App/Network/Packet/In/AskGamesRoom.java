@@ -18,6 +18,10 @@ import hidenword.App.Network.Session.Session;
 final public class AskGamesRoom implements PacketRegistryHandler.PacketHandler {
     final private GameService service;
     
+    /**
+     * Constructor of AskGamesRoom packet received
+     * @param service
+     */
     public AskGamesRoom(GameService service) {
         this.service = service;
     }

@@ -8,6 +8,7 @@ package hidenword.App.Network;
 
 import hidenword.App.Game.GameService;
 import hidenword.App.Network.Packet.In.AskGamesRoom;
+import hidenword.App.Network.Packet.In.CreateDuelGame;
 import hidenword.App.Network.Packet.In.GameTurnCharReceived;
 import hidenword.App.Network.Packet.In.JoinDuelGame;
 import hidenword.App.Network.Packet.In.SessionClosed;
@@ -49,8 +50,9 @@ final public class ServerFactory {
             // @todo register packets which required the session service
             packets.register(new SessionClosed(sessions));
             packets.register(new StartSoloGame(gameService)); 
-            packets.register(new StartDuelGame(gameService));
+            packets.register(new CreateDuelGame(gameService));
             packets.register(new JoinDuelGame(gameService));
+            packets.register(new StartDuelGame(gameService));
             packets.register(new GameTurnCharReceived(gameService));
             packets.register(new AskGamesRoom(gameService));
         }

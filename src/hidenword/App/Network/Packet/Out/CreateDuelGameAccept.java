@@ -9,14 +9,14 @@ package hidenword.App.Network.Packet.Out;
 import hidenword.App.Network.Session.Session;
 
 /**
- * Answer of Packet when a Player want to start a duel game
- * Response for {@link StartDuelGame}
+ * Answer of Packet when a Player want to create a duel game
+ * Response for {@link CreateDuelGame}
  * @author Gaëtan
  */
-final public class StartDuelGameAccept {
+final public class CreateDuelGameAccept {
     final private Session session;  
 
-    public StartDuelGameAccept(Session session) {
+    public CreateDuelGameAccept(Session session) {
         this.session = session;
     }
 

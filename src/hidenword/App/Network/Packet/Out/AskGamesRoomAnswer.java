@@ -16,7 +16,11 @@ public class AskGamesRoomAnswer {
     final private Session session;
     private final String message;
     
-
+    /**
+     * Constructor of AskGamesRoomAnswer packet
+     * @param session
+     * @param message
+     */
     public AskGamesRoomAnswer(Session session,String message) {
         this.session = session;
         this.message = message;

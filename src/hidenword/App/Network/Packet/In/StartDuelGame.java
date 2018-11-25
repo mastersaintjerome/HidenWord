@@ -7,12 +7,14 @@
 package hidenword.App.Network.Packet.In;
 
 import hidenword.App.Game.GameService;
-import hidenword.App.Network.Packet.Out.StartDuelGameAccept;
+import hidenword.App.Game.Player;
+import hidenword.App.Network.Packet.Out.NextTurn;
 import hidenword.App.Network.Packet.PacketRegistryHandler;
 import hidenword.App.Network.Session.Session;
+import java.util.List;
 
 /**
- * Packet when a Player want to start a duel game
+ * Packet when player start DuelGame (Should answer only to the first player)
  * @author Gaëtan
  */
 final public class StartDuelGame implements PacketRegistryHandler.PacketHandler {
@@ -24,13 +26,19 @@ final public class StartDuelGame implements PacketRegistryHandler.PacketHandler 
     
     @Override
     public void handle(Session session, String packet) {
-        StartDuelGameAccept startDuelGameAccept = new StartDuelGameAccept(session);
-        service.create(session, true);
-        session.write(startDuelGameAccept);
+        Player player = service.getPlayer(session);
+        List<Player> players = player.getGame().getPlayers();
+        if(players.size() == 2){
+            //Only for the first player
+            if(players.get(0).equals(player)){
+                NextTurn nextTurn = new NextTurn(session);
+                session.write(nextTurn);
+            }
+        }
     }
 
     @Override
     public String code() {
-        return "DUEL";
+        return "SDUEL";
     }   
 }

@@ -13,6 +13,7 @@ import hidenword.App.Network.Packet.Out.GameLost;
 import hidenword.App.Network.Packet.Out.GameTurnCharAccepted;
 import hidenword.App.Network.Packet.Out.GameTurnCharRefused;
 import hidenword.App.Network.Packet.Out.GameWin;
+import hidenword.App.Network.Packet.Out.NextTurn;
 import hidenword.App.Network.Packet.PacketRegistryHandler;
 import hidenword.App.Network.Session.Session;
 import java.util.List;
@@ -35,13 +36,21 @@ final public class GameTurnCharReceived implements PacketRegistryHandler.PacketH
         char c = receivedChar.charAt(0);
         if(service.getGame(session).nextTurn()){
             Player player = service.getPlayer(session);
+            List<Player> players = player.getGame().getPlayers();
             if(player.getPlayerGameState() == PlayerGameState.RUN){
                 GameTurnCharAccepted gameTurnCharAccepted = new GameTurnCharAccepted(session,player.getSearchWord().toString());
                 session.write(gameTurnCharAccepted);
+                if(players.size() == 2){
+                    for(Player playerGame : players){
+                        if(!playerGame.equals(player)){
+                            NextTurn nextTurn = new NextTurn(session);
+                            playerGame.getSession().write(nextTurn);
+                        }
+                    }
+                }
             }else if (player.getPlayerGameState() == PlayerGameState.WIN){
                 GameWin gameWin = new GameWin(session);
                 session.write(gameWin);
-                List<Player> players = player.getGame().getPlayers();
                 if(players.size() == 2){
                     for(Player playerGame : players){
                         if(!playerGame.equals(player)){

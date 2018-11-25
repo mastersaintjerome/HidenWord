@@ -144,13 +144,6 @@ final public class Game {
     }
 
     /**
-     * Next turn counter (turnCounter++)
-     */
-    public void turnCounter() {
-        this.turnCounter++;
-    }
-
-    /**
      * Set a random word to found
      * @throws IOException
      */
@@ -218,6 +211,7 @@ final public class Game {
     public boolean playerGameturn(Player player){
         char c = player.getCurrentChar();
         if(!player.isCharUsed(c)){
+            turnCounter++;
             //We don't count the try if player is right
             if(charInWord(c)){
                 player.setCharFoundinSearchWord(findIndexes(c));
