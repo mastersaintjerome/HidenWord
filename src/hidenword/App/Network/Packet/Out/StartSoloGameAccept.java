@@ -17,7 +17,11 @@ final public class StartSoloGameAccept {
     final private Session session;
     private final String searchWord;
     
-
+    /**
+     * Constructor of StartSoloGameAccept
+     * @param session
+     * @param searchWord
+     */
     public StartSoloGameAccept(Session session,String searchWord) {
         this.session = session;
         this.searchWord = searchWord;

@@ -13,7 +13,7 @@ import hidenword.App.Network.Session.Session;
  * @author Gaëtan
  */
 /**
- * Response for {@link SessionStarted}
+ * Response for {@link hidenword.App.Network.Packet.In.SessionStarted}
  * Welcome packet
  */
 final public class Welcome {
