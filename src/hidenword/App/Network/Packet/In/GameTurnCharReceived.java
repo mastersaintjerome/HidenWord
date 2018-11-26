@@ -43,7 +43,7 @@ final public class GameTurnCharReceived implements PacketRegistryHandler.PacketH
                 if(players.size() == 2){
                     for(Player playerGame : players){
                         if(!playerGame.equals(player)){
-                            NextTurn nextTurn = new NextTurn(session);
+                            NextTurn nextTurn = new NextTurn(session,player.getSearchWord().toString());
                             playerGame.getSession().write(nextTurn);
                         }
                     }

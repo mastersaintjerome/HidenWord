@@ -36,7 +36,6 @@ final public class AskGamesRoom implements PacketRegistryHandler.PacketHandler {
             gamesRoom.append(" 1/2 ");
         }
         AskGamesRoomAnswer message = new AskGamesRoomAnswer(session,gamesRoom.toString());
-
         session.write(message);
     }
 

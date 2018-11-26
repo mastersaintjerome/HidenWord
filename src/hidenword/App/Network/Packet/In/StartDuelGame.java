@@ -9,6 +9,7 @@ package hidenword.App.Network.Packet.In;
 import hidenword.App.Game.GameService;
 import hidenword.App.Game.Player;
 import hidenword.App.Network.Packet.Out.NextTurn;
+import hidenword.App.Network.Packet.Out.WaitTurn;
 import hidenword.App.Network.Packet.PacketRegistryHandler;
 import hidenword.App.Network.Session.Session;
 import java.util.List;
@@ -31,8 +32,11 @@ final public class StartDuelGame implements PacketRegistryHandler.PacketHandler 
         if(players.size() == 2){
             //Only for the first player
             if(players.get(0).equals(player)){
-                NextTurn nextTurn = new NextTurn(session);
+                NextTurn nextTurn = new NextTurn(session,player.getSearchWord().toString());
                 session.write(nextTurn);
+            }else{
+                WaitTurn waitTurn = new WaitTurn(session,player.getSearchWord().toString());
+                session.write(waitTurn);
             }
         }
     }

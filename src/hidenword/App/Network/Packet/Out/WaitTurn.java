@@ -9,24 +9,24 @@ package hidenword.App.Network.Packet.Out;
 import hidenword.App.Network.Session.Session;
 
 /**
- * Packet tell client it's his turn
+ * Packet tell client wait his turn
  * @author Gaëtan
  */
-public class NextTurn {
+public class WaitTurn {
     final private Session session;  
     final private String searchWord;
-
     /**
      * Constructor of NextTurn
      * @param session
+     * @param searchWOrd
      */
-    public NextTurn(Session session,String searchWord) {
+    public WaitTurn(Session session,String searchWord) {
         this.session = session;
         this.searchWord = searchWord;
     }
 
     @Override
     public String toString() {
-        return "PLAY " + searchWord;
+        return "WAITT " + searchWord;
     }
 }
