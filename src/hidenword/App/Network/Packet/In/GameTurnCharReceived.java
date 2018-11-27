@@ -73,6 +73,15 @@ final public class GameTurnCharReceived implements PacketRegistryHandler.PacketH
         }else{
             GameTurnCharRefused gameTurnCharRefused = new GameTurnCharRefused(session,c);
             session.write(gameTurnCharRefused);
+            List<Player> players = player.getGame().getPlayers();
+            if(players.size() == 2){
+                for(Player playerGame : players){
+                    if(!playerGame.equals(player)){
+                        NextTurn nextTurn = new NextTurn(playerGame.getSession(),playerGame.getSearchWord().toString());
+                        playerGame.getSession().write(nextTurn);
+                    }
+                }
+            }
         } 
     }
 
