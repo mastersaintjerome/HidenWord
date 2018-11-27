@@ -62,9 +62,6 @@ final public class GameTurnCharReceived implements PacketRegistryHandler.PacketH
                             playerGame.getSession().write(gameLost);
                         }
                     }
-                }else{
-                    GameLost gameLost = new GameLost(session);
-                    session.write(gameLost);
                 }
             }else if(player.getPlayerGameState() == PlayerGameState.LOST){
                 GameLost gameLost = new GameLost(session);
