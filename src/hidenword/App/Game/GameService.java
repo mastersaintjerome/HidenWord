@@ -55,6 +55,7 @@ public class GameService {
         gamePlayers.add(player);
         game.init(gamePlayers, MAXTRY);
         games.add(game);
+        logger.info("Game Created");
     }
     
     /**

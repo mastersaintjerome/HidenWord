@@ -34,8 +34,9 @@ final public class GameTurnCharReceived implements PacketRegistryHandler.PacketH
         String[] parts = packet.split(" ", 2);
         String receivedChar = parts[1];
         char c = receivedChar.charAt(0);
+        Player player = service.getPlayer(session);
+        player.setCurrentChar(c);
         if(service.getGame(session).nextTurn()){
-            Player player = service.getPlayer(session);
             List<Player> players = player.getGame().getPlayers();
             if(player.getPlayerGameState() == PlayerGameState.RUN){
                 GameTurnCharAccepted gameTurnCharAccepted = new GameTurnCharAccepted(session,player.getSearchWord().toString());
@@ -43,10 +44,13 @@ final public class GameTurnCharReceived implements PacketRegistryHandler.PacketH
                 if(players.size() == 2){
                     for(Player playerGame : players){
                         if(!playerGame.equals(player)){
-                            NextTurn nextTurn = new NextTurn(session,player.getSearchWord().toString());
+                            NextTurn nextTurn = new NextTurn(playerGame.getSession(),playerGame.getSearchWord().toString());
                             playerGame.getSession().write(nextTurn);
                         }
                     }
+                }else{
+                    NextTurn nextTurn = new NextTurn(session,player.getSearchWord().toString());
+                    session.write(nextTurn);
                 }
             }else if (player.getPlayerGameState() == PlayerGameState.WIN){
                 GameWin gameWin = new GameWin(session);
@@ -54,10 +58,13 @@ final public class GameTurnCharReceived implements PacketRegistryHandler.PacketH
                 if(players.size() == 2){
                     for(Player playerGame : players){
                         if(!playerGame.equals(player)){
-                            GameLost gameLost = new GameLost(session);
+                            GameLost gameLost = new GameLost(playerGame.getSession());
                             playerGame.getSession().write(gameLost);
                         }
                     }
+                }else{
+                    GameLost gameLost = new GameLost(session);
+                    session.write(gameLost);
                 }
             }else if(player.getPlayerGameState() == PlayerGameState.LOST){
                 GameLost gameLost = new GameLost(session);

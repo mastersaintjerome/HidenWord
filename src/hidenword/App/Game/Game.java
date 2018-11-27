@@ -48,6 +48,7 @@ final public class Game {
         } catch (IOException ex) {
             logger.log(Level.SEVERE, null, ex);
         }
+        logger.info("Game Started");
     }
     
     /**
@@ -163,6 +164,7 @@ final public class Game {
         Random rand = new Random(); 
         int randNumber = rand.nextInt(max - 0 + 1) + 0;
         word = fileProcessor.getLineAtIndex(randNumber);
+        logger.info("Word << " + word);
     }
     
     /**
@@ -220,6 +222,7 @@ final public class Game {
         char c = player.getCurrentChar();
         if(!player.isCharUsed(c)){
             turnCounter++;
+            player.charUsed(c);
             //We don't count the try if player is right
             if(charInWord(c)){
                 player.setCharFoundinSearchWord(findIndexes(c));
@@ -234,8 +237,9 @@ final public class Game {
                 gameState = GameState.END;
             }
             return true;
+        }else{
+            return false;
         }
-        return false;
     }
     
     /**

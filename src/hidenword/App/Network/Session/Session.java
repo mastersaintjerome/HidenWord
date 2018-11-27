@@ -81,15 +81,15 @@ final public class Session implements Runnable{
     }
 
     private boolean isClosed() {
-        return (this.clientSocket.isClosed() || !running);
+        return clientSocket.isClosed() || !running;
     }
 
     /**
      * Stop a session
      */
     public void stop() {
-        running = false;
         sessionService.remove(this);
+        running = false;
         try {
             if(!clientSocket.isClosed()) {
                 clientSocket.close();

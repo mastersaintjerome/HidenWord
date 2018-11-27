@@ -1304,7 +1304,7 @@ apathie
 apathique
 apatride
 apercevoir
-aperçu
+apercu
 aperitif
 apesanteur
 aphasie
@@ -2288,7 +2288,7 @@ balance
 balancer
 Balanchine
 balancier
-balançoire
+balancoire
 balatum
 balaye
 balayer
@@ -2627,7 +2627,7 @@ berner
 Berry
 Bertin
 Bertrand
-Besançon
+Besancon
 besogne
 besogner
 besoin
@@ -3347,7 +3347,7 @@ calculer
 calculette
 calculs
 cale en
-caleçon
+calecon
 Caledonie
 caledonienne
 calendrier
@@ -4419,7 +4419,7 @@ colereux
 colerique
 Colette
 colibri
-colimaçon
+colimacon
 colin
 colis
 collaborateur
@@ -4538,7 +4538,7 @@ commencent
 commencer
 commencera
 commenceront
-commençons
+commencons
 comment
 commentaire
 commentaires
@@ -4550,8 +4550,8 @@ commente
 commenter
 commerage
 commerages
-commerçant
-commerçants
+commercant
+commercants
 commerce
 commerces
 commercial
@@ -4797,7 +4797,7 @@ conclusif
 conclusion
 conclusions
 conclut
-conçoit
+concoit
 concombre
 concordance
 concordantes
@@ -4811,10 +4811,10 @@ concretes
 concretion
 concretiser
 concrets
-conçu
+concu
 concubinage
-conçue
-conçues
+concue
+concues
 concupiscence
 concupiscent
 concurrence
@@ -4824,7 +4824,7 @@ concurrente
 concurrentes
 concurrentiel
 concurrents
-conçus
+concus
 condamnable
 condamnant
 condamnation
@@ -5259,7 +5259,7 @@ contrecoup
 contredire
 contredit
 contree
-contrefaçon
+contrefacon
 contrefait
 contrepartie
 contre-pied
@@ -6006,7 +6006,7 @@ debute
 debute
 debuter
 debuts
-deçà
+decà
 decachete
 decacheter
 decade
@@ -6147,9 +6147,9 @@ decrire
 decrit
 decrocher
 decroitre
-deçu
-deçue
-deçus
+decu
+decue
+decus
 dedaigner
 dedaigneusement
 dedaigneux
@@ -6435,8 +6435,8 @@ denombrer
 denomination
 denomme
 denommer
-denonçaient
-denonçait
+denoncaient
+denoncait
 denonce
 denonce
 denoncee
@@ -8623,7 +8623,7 @@ etame
 etamer
 etanche
 etancher
-etançonner
+etanconner
 etang
 etant
 etape
@@ -9108,9 +9108,9 @@ facilite
 facilitee
 faciliter
 facilites
-façon
-façonner
-façons
+facon
+faconner
+facons
 facteur
 facteurs
 faction
@@ -9397,7 +9397,7 @@ fiabilite
 fiable
 fiables
 fiacre
-fiançailles
+fiancailles
 fiance
 fiancer
 fiasco
@@ -9846,11 +9846,11 @@ Framatome
 framboise
 framboisier
 franc
-français
-Français
-française
-Française
-françaises
+francais
+Francais
+francaise
+Francaise
+francaises
 France
 Francfort
 franche
@@ -9866,12 +9866,12 @@ Francis
 franciscain
 Francisco
 Franck
-franc-maçon
-franc-maçonnerie
-franc-maçonnique
+franc-macon
+franc-maconnerie
+franc-maconnique
 franco
-François
-Françoise
+Francois
+Francoise
 francophone
 francophones
 francophonie
@@ -10120,8 +10120,8 @@ garantissant
 garantit
 garce
 Garcia
-garçon
-garçons
+garcon
+garcons
 Gard
 gardait
 gardant
@@ -10332,7 +10332,7 @@ glacer
 glacial
 glacier
 glaciere
-glaçon
+glacon
 glaise
 glaive
 glande
@@ -12171,7 +12171,7 @@ irregularites
 irregulier
 irreligion
 irremediable
-irremplaçable
+irremplacable
 irreparable
 irrepressible
 irreprochable
@@ -12717,8 +12717,8 @@ Lech
 lecher
 leche-vitrines
 Leclerc
-leçon
-leçons
+lecon
+lecons
 lecteur
 lecteurs
 lectrice
@@ -12920,7 +12920,7 @@ lilas
 Lille
 lima
 Lima
-limaçon
+limacon
 lime
 limer
 liminaire
@@ -13202,10 +13202,10 @@ machines
 mâchoire
 mâchonner
 macintosh
-maçon
-maçonnerie
-maçonnique
-maçons
+macon
+maconnerie
+maconnique
+macons
 macro
 madame
 Madani
@@ -13330,7 +13330,7 @@ malencontreux
 malentendant
 malentendu
 malentendus
-malfaçon
+malfacon
 malfaiteur
 malfaiteurs
 malgre
@@ -15917,11 +15917,11 @@ percer
 percevoir
 perche
 percher
-perçoit
-perçoivent
-perçu
-perçue
-perçus
+percoit
+percoivent
+percu
+percue
+percus
 percussions
 perd
 perdait
@@ -16453,7 +16453,7 @@ poignee
 poignee de main
 poignet
 poil
-poinçon
+poincon
 poindre
 poing
 point
@@ -16809,7 +16809,7 @@ precises
 precision
 precisions
 precoce
-preconçu
+preconcu
 preconisait
 preconise
 preconise
@@ -17394,7 +17394,7 @@ prouver
 Prouvost
 provenance
 provenant
-provençal
+provencal
 Provence
 provenir
 proverbe
@@ -17775,7 +17775,7 @@ ramper
 rancard
 rancœur
 rancœurs
-rançon
+rancon
 rancunier
 randonnee
 rang
@@ -18028,8 +18028,8 @@ reclassement
 reclus
 reclusion
 reclusionnaire
-reçoit
-reçoivent
+recoit
+recoivent
 recolte
 recolter
 recoltes
@@ -18104,8 +18104,8 @@ recteurs
 rectification
 rectifier
 rectorat
-reçu
-reçue
+recu
+recue
 recueil
 recueille
 recueilli
@@ -18113,7 +18113,7 @@ recueillies
 recueillir
 recueillis
 recueils
-reçues
+recues
 recul
 reculade
 recule
@@ -18124,10 +18124,10 @@ recuperation
 recupere
 recupere
 recuperer
-reçus
+recus
 recuse
 recuser
-reçut
+recut
 recyclage
 redacteur
 redacteur en chef
@@ -20291,13 +20291,13 @@ soumises
 soumission
 soupape
 soupapes
-soupçon
-soupçonne
-soupçonne
-soupçonner
-soupçonnes
-soupçonneux
-soupçons
+soupcon
+soupconne
+soupconne
+soupconner
+soupconnes
+soupconneux
+soupcons
 soupe
 souper
 soupeser
@@ -21306,7 +21306,7 @@ tiennent
 tiennes
 tiens
 tient
-tierçage
+tiercage
 tiers
 tige
 tigre

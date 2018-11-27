@@ -4,6 +4,8 @@ import hidenword.App.Network.Session.Session;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Player Class, define a player
@@ -21,6 +23,7 @@ final public class Player {
     private final Set<Character> charUsed;
     private Game game;
     private Session session;
+    final private Logger logger;
 
     /**
      * Create a new player
@@ -30,8 +33,10 @@ final public class Player {
         this.pseudo = pseudo;
         this.score = 0;
         this.playerCurrentTry = 0;
-        searchWord = new StringBuilder();
+        searchWord = new StringBuilder(256);
         charUsed = new HashSet();
+        logger = Logger.getLogger(Player.class.getName());
+        playerGameState = PlayerGameState.RUN;
     }
 
     /**
@@ -156,7 +161,6 @@ final public class Player {
      */
     public void setCurrentChar(char currentChar) {
         this.currentChar = currentChar;
-        charUsed.add(currentChar);
     }
 
     /**
@@ -173,6 +177,10 @@ final public class Player {
         return false;
     }
     
+    public void charUsed(char currentChar){
+        charUsed.add(currentChar);
+    }
+    
     /**
      * init the search word
      * @param word
@@ -183,7 +191,8 @@ final public class Player {
             searchWord.append("_");
         }
         searchWord.setCharAt(0,word.charAt(0));
-        searchWord.setCharAt(length,word.charAt(length-1));
+        searchWord.setCharAt(length-1,word.charAt(length-1));
+        logger.log(Level.INFO, "SearchWord : {0}", searchWord.toString());  
     }
     
     /**
