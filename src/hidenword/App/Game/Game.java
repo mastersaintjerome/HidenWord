@@ -182,15 +182,12 @@ final public class Game {
      * @return ArrayList<Integer> with all indexes where the char is.
      */
     private List<Integer> findIndexes(char c){
-        List<Integer> indexes = new ArrayList<Integer>();
+        List<Integer> indexes = new ArrayList<>();
         int index = word.indexOf(c);
-        if(index >= -1){
-            indexes.add(index);
-        }
         while (index >=0){
+            indexes.add(index);
             System.out.println("Index : "+index);
             index = word.indexOf(c, index+1);
-            indexes.add(index);
         }
         return indexes;
     }

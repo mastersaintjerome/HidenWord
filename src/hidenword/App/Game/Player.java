@@ -201,7 +201,7 @@ final public class Player {
      */
     public void setCharFoundinSearchWord(List<Integer> indexes){
         for (Integer indexe : indexes) {
-            searchWord.setCharAt(indexe, currentChar);
+            searchWord.setCharAt(indexe, currentChar);  
         }
     }
 }
