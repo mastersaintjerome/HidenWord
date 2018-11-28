@@ -9,8 +9,8 @@ package hidenword.App.Network.Packet.Out;
 import hidenword.App.Network.Session.Session;
 
 /**
- *
- * @author Gaëtan
+ * Packet send when a char is refused
+ * @author Gaëtan Perrot, Barbaria
  */
 public class GameTurnCharRefused {
     final private Session session;

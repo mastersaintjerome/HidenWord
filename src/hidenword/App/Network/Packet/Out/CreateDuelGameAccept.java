@@ -11,7 +11,7 @@ import hidenword.App.Network.Session.Session;
 /**
  * Answer of Packet when a Player want to create a duel game
  * Response for {@link CreateDuelGame}
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class CreateDuelGameAccept {
     final private Session session;  

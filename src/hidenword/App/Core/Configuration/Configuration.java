@@ -8,7 +8,7 @@ package hidenword.App.Core.Configuration;
 
 /**
  * Configuration class, use to get value from config file
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class Configuration {
     final private Driver driver;

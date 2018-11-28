@@ -11,7 +11,7 @@ import hidenword.App.Core.Configuration.PropertiesDriver;
 
 /**
  * Configuration Factory for configuration with properties file
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class PropertiesConfigurationFactory implements ConfigurationFactory{
 

@@ -10,7 +10,7 @@ import hidenword.App.Game.Game;
 
 /**
  * Strategy for the duel game mode turn
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class DuelTurnStrategy implements GameTurnStrategy{
 

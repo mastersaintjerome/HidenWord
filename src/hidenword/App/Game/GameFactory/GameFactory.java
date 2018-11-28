@@ -10,7 +10,7 @@ import hidenword.App.Game.Game;
 
 /**
  * GameFactory is an Interface to create the correct Game Mode
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public interface GameFactory {
 

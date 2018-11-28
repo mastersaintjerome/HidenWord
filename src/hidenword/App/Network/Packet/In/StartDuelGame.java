@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * Packet when player start DuelGame (Should answer only to the first player)
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class StartDuelGame implements PacketRegistryHandler.PacketHandler {
     final private GameService service;

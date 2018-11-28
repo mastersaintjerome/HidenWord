@@ -10,7 +10,7 @@ import hidenword.App.Network.Session.Session;
 
 /**
  * Packet tell client wait his turn
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public class WaitTurn {
     final private Session session;  

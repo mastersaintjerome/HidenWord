@@ -18,8 +18,7 @@ import java.util.Map;
  *
  * For example :
  * "ECHO test" Packet ECHO with "test" as argument
- * "STOP" Packet STOP without arguments
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public final class PacketRegistryHandler implements SessionHandler{
 

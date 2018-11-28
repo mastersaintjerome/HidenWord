@@ -14,7 +14,7 @@ import java.util.Iterator;
 
 /**
  * Packet when a Player ask for room
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class AskGamesRoom implements PacketRegistryHandler.PacketHandler {
     final private GameService service;

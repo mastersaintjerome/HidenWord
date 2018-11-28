@@ -13,7 +13,7 @@ import hidenword.App.Network.Session.Session;
 
 /**
  * Packet when a Player want to start a solo game
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class StartSoloGame implements PacketRegistryHandler.PacketHandler {
     final private GameService service;

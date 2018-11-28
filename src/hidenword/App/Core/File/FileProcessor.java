@@ -12,7 +12,7 @@ import java.io.LineNumberReader;
 
 /**
  * File Processor
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public class FileProcessor {
     private BufferedReader reader;

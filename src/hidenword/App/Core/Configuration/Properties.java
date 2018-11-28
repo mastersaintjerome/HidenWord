@@ -8,7 +8,7 @@ package hidenword.App.Core.Configuration;
 
 /**
  * Properties of config file
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class Properties {
     // Properties (user configurable)

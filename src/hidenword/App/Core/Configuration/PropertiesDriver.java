@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 /**
  * Properties Driver, implementation of driver file for configuration using properties file
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class PropertiesDriver implements Driver{
     final private Properties properties;

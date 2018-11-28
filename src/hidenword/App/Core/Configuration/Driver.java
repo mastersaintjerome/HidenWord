@@ -8,7 +8,7 @@ package hidenword.App.Core.Configuration;
 
 /**
  * Base Interface for Driver file for configuration using
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public interface Driver {
     /**

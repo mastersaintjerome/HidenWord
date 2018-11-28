@@ -8,7 +8,7 @@ package hidenword.App.Core.File;
 
 /**
  * Files Paths Constants
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public final class Paths {
 

@@ -20,6 +20,7 @@ import hidenword.App.Network.Session.SessionService;
 
 /**
  * Factory for all the server system
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class ServerFactory {
     /** The server port */

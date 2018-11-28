@@ -10,7 +10,7 @@ import hidenword.App.Game.Game;
 
 /**
  * GameTurnStrategy is an interface to use the correct nextTurn() opperation
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public interface GameTurnStrategy {
 

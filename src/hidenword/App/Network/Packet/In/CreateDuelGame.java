@@ -13,7 +13,7 @@ import hidenword.App.Network.Session.Session;
 
 /**
  * Packet when a Player want to create a duel game
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class CreateDuelGame implements PacketRegistryHandler.PacketHandler {
     final private GameService service;

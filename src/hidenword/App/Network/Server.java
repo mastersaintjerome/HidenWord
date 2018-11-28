@@ -12,7 +12,7 @@ import hidenword.App.Network.Session.SessionService;
 
 /**
  * Server class
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public final class Server implements Runnable {
     private ServerSocket ss;

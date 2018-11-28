@@ -15,7 +15,7 @@ import hidenword.App.Network.Session.Session;
 
 /**
  * Packet when a Player want to join a duel game
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class JoinDuelGame implements PacketRegistryHandler.PacketHandler {
     final private GameService service;

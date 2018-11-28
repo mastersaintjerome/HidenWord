@@ -21,7 +21,7 @@ import java.util.List;
 
 /**
  * Packet when a Player send a Char after play his turn
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class GameTurnCharReceived implements PacketRegistryHandler.PacketHandler {
     final private GameService service;

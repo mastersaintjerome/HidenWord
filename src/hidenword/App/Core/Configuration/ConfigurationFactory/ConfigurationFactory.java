@@ -10,7 +10,7 @@ import hidenword.App.Core.Configuration.Configuration;
 
 /**
  * Base Interface for Configuration Factory
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public interface ConfigurationFactory {
 

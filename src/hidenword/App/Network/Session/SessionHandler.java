@@ -2,7 +2,7 @@ package hidenword.App.Network.Session;
 
 /**
  * Base Interface of Session Handler
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public interface SessionHandler {
     

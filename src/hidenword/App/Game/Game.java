@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 /**
  * Game Classe, all the game logic
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class Game {
     private String word;

@@ -10,7 +10,7 @@ import hidenword.App.Network.Session.Session;
 
 /**
  * Packet Send when player win
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public class GameWin {
     final private Session session;

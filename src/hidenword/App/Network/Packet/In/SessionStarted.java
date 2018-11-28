@@ -12,7 +12,7 @@ import hidenword.App.Network.Session.Session;
 
 /**
  * SessionStarted Packet
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class SessionStarted implements PacketRegistryHandler.PacketHandler{
 

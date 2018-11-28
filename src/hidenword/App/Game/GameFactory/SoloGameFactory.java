@@ -11,7 +11,7 @@ import hidenword.App.Game.GameStrategy.SoloTurnStrategy;
 
 /**
  * Create the Solo Game Mode with the strategy 
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public class SoloGameFactory implements GameFactory{
 

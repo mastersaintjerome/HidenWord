@@ -10,7 +10,7 @@ import hidenword.App.Network.Session.Session;
 
 /**
  * A session is stopped
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class Disconnected {
     final private Session session;

@@ -13,7 +13,7 @@ import hidenword.App.Network.Session.SessionService;
 
 /**
  * Notify other sessions that current session is closed
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class SessionClosed implements PacketRegistryHandler.PacketHandler {
     final private SessionService service;

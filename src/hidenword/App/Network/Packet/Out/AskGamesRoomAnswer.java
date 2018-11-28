@@ -10,7 +10,7 @@ import hidenword.App.Network.Session.Session;
 
 /**
  * Answer when client ask for games room
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public class AskGamesRoomAnswer {
     final private Session session;

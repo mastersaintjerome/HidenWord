@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 
 /**
  * Handle all game
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public class GameService {
     final private int MAXTRY = 10;

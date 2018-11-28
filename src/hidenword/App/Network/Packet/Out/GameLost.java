@@ -10,7 +10,7 @@ import hidenword.App.Network.Session.Session;
 
 /**
  * Packet Send when player lost
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public class GameLost {
     final private Session session;

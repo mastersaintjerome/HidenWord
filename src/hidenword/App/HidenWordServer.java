@@ -11,7 +11,7 @@ import hidenword.App.Network.ServerFactory;
 
 /**
  *  Main of the Server
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public class HidenWordServer {
      public static void main(String[] args) throws Exception {

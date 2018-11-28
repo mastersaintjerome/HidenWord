@@ -11,7 +11,7 @@ import hidenword.App.Network.Session.Session;
 /**
  * Answer of Packet when a Player want to start a solo game
  * Response for {@link StartSoloGame}
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class StartSoloGameAccept {
     final private Session session;

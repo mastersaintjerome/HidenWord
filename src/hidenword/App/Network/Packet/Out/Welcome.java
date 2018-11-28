@@ -10,7 +10,7 @@ import hidenword.App.Network.Session.Session;
 
 /**
  * Welcome Packet
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 /**
  * Response for {@link hidenword.App.Network.Packet.In.SessionStarted}

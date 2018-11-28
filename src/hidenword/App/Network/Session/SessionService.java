@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 /**
  * SessionService Class, use to manage Session
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class SessionService {
     private SessionHandler handler;

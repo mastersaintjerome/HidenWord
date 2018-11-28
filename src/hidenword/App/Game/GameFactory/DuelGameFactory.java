@@ -11,7 +11,7 @@ import hidenword.App.Game.GameStrategy.DuelTurnStrategy;
 
 /**
  * Create the Duel Game Mode with the strategy 
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 public class DuelGameFactory implements GameFactory{
 

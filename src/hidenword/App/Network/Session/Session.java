@@ -11,8 +11,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Session class
- * @author Gaëtan
+ * Session class, session logic for connection with the client
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class Session implements Runnable{
 

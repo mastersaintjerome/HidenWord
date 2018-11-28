@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 /**
  * Player Class, define a player
- * @author Gaëtan
+ * @author Gaëtan Perrot, Barbaria
  */
 final public class Player {
     final private String pseudo;
