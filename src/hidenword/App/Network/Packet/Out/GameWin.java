@@ -14,17 +14,19 @@ import hidenword.App.Network.Session.Session;
  */
 public class GameWin {
     final private Session session;
+    private final String word;
     
     /**
      * Constructor of GameWin packet
      * @param session
      */
-    public GameWin(Session session) {
+    public GameWin(Session session,String word) {
         this.session = session;
+        this.word = word;
     }
 
     @Override
     public String toString() {
-        return "GWIN " + session;
+        return "GWIN " + word;
     }
 }

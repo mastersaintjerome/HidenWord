@@ -53,7 +53,7 @@ final public class GameTurnCharReceived implements PacketRegistryHandler.PacketH
                     session.write(nextTurn);
                 }
             }else if (player.getPlayerGameState() == PlayerGameState.WIN){
-                GameWin gameWin = new GameWin(session);
+                GameWin gameWin = new GameWin(session,player.getSearchWord().toString());
                 session.write(gameWin);
                 if(players.size() == 2){
                     for(Player playerGame : players){
