@@ -99,6 +99,7 @@ public class GameService {
      * @param session
      */
     public void remove(Session session){
+        games.remove(getPlayer(session).getGame());
         getPlayer(session).setGame(null);
         players.remove(session);
     }
