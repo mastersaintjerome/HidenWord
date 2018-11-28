@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  * @author Gaëtan
  */
 public class GameService {
-    final private int MAXTRY = 15;
+    final private int MAXTRY = 10;
     final private Map<Session,Player> players = new HashMap();
     final private List<Game> games = new ArrayList();
     final private Logger logger; 
