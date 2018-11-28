@@ -71,11 +71,20 @@ public class GameService {
         return players.get(session);
     }
     
+    private void cleanGames(){
+        for(Map.Entry<Session, Player> entry : players.entrySet()){
+            if(entry.getValue().getSession() == null){
+                games.remove(entry.getValue().getGame());
+            }
+        }
+    }
+    
     /**
      * Get all duel game IDs
      * @return Integer List
      */
     public List<Integer> getDuelGameIds(){
+        cleanGames();
         List<Integer> duelGameIds = new ArrayList();
         for (Game game : games) {
             if(!game.isRunning()){
