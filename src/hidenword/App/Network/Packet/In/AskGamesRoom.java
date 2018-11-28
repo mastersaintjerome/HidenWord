@@ -10,6 +10,7 @@ import hidenword.App.Game.GameService;
 import hidenword.App.Network.Packet.Out.AskGamesRoomAnswer;
 import hidenword.App.Network.Packet.PacketRegistryHandler;
 import hidenword.App.Network.Session.Session;
+import java.util.Iterator;
 
 /**
  * Packet when a Player ask for room
@@ -29,11 +30,14 @@ final public class AskGamesRoom implements PacketRegistryHandler.PacketHandler {
     @Override
     public void handle(Session session, String packet) {
         StringBuilder gamesRoom = new StringBuilder(256);
-        for (Integer duelGameId : service.getDuelGameIds()) {
+        for(Iterator it = service.getDuelGameIds().iterator();it.hasNext();){
             gamesRoom.append("[");
-            gamesRoom.append(duelGameId);
+            gamesRoom.append(it.next());
             gamesRoom.append("]");
-            gamesRoom.append(" 1/2,");
+            gamesRoom.append(" 1/2");
+            if(it.hasNext()){
+               gamesRoom.append(","); 
+            }
         }
         AskGamesRoomAnswer message = new AskGamesRoomAnswer(session,gamesRoom.toString());
         session.write(message);
