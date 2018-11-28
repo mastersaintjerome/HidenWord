@@ -14,6 +14,7 @@ import hidenword.App.Network.Packet.Out.GameTurnCharAccepted;
 import hidenword.App.Network.Packet.Out.GameTurnCharRefused;
 import hidenword.App.Network.Packet.Out.GameWin;
 import hidenword.App.Network.Packet.Out.NextTurn;
+import hidenword.App.Network.Packet.Out.WaitTurn;
 import hidenword.App.Network.Packet.PacketRegistryHandler;
 import hidenword.App.Network.Session.Session;
 import java.util.List;
@@ -42,6 +43,8 @@ final public class GameTurnCharReceived implements PacketRegistryHandler.PacketH
                 GameTurnCharAccepted gameTurnCharAccepted = new GameTurnCharAccepted(session,player.getSearchWord().toString());
                 session.write(gameTurnCharAccepted);
                 if(players.size() == 2){
+                    WaitTurn waitTurn = new WaitTurn(session,player.getSearchWord().toString());
+                    session.write(waitTurn);
                     for(Player playerGame : players){
                         if(!playerGame.equals(player)){
                             NextTurn nextTurn = new NextTurn(playerGame.getSession(),playerGame.getSearchWord().toString());
